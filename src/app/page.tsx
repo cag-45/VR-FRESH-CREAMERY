@@ -1,69 +1,71 @@
-import Image from "next/image";
+import { Header } from "@/components/common/Header";
+import { Footer } from "@/components/common/Footer";
+import {
+  HeroSection,
+  FlavorsSection,
+  CraftStorySection,
+  CraftFilmstripSection,
+  CateringSection,
+  TestimonialsSection,
+  LocationHoursSection,
+} from "@/components/sections";
+import { MessageCircle } from "lucide-react";
+import { STORE_INFO } from "@/data/store-info";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="min-h-screen flex flex-col bg-[#04140B] text-[#FAF6ED] antialiased selection:bg-emerald-500 selection:text-black">
+      {/* Elevated Navigation Header */}
+      <Header />
+
+      {/* Main Narrative Experience */}
+      <main className="flex-1">
+        {/* 01: Full-Bleed Atmospheric Video & Live Dispatch Hero */}
+        <HeroSection />
+
+        {/* 02: The Curated Four Interactive Sensory Tasting Stage */}
+        <FlavorsSection />
+
+        {/* 03: The Anti-Factory Gelato Standard & Ingredient Matrix */}
+        <CraftStorySection />
+
+        {/* 04: Interactive 5-Litre Tub & Party Catering Calculator */}
+        <CateringSection />
+
+        {/* 05: The Churn In Motion — Photographic Filmstrip */}
+        <CraftFilmstripSection />
+
+        {/* 06: Verified Customer Love & Google Reviews */}
+        <TestimonialsSection />
+
+        {/* 07: Medipalli Parlour Workshop & Interactive Navigation */}
+        <LocationHoursSection />
       </main>
+
+      {/* 08: Bespoke Architectural Typographic Footer */}
+      <Footer />
+
+      {/* Floating Tactical WhatsApp Button for Quick Orders */}
+      <aside aria-label="Direct WhatsApp Order" className="fixed bottom-5 right-5 z-40">
+        <a
+          href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=Hi%20VR%20Fresh%20Creamery,%20I%20would%20like%20to%20order%20ice%20cream.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-4 py-3 rounded-full bg-[#258742] hover:bg-[#1E6F36] text-white shadow-2xl hover:shadow-emerald-500/30 transition-all border border-emerald-400/40 hover:scale-105 group backdrop-blur-md"
+        >
+          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+            <MessageCircle className="w-5 h-5 text-white" />
+          </div>
+          <div className="text-left hidden sm:block pr-1">
+            <span className="block text-[9px] uppercase tracking-widest text-emerald-200 font-bold">
+              Instant Order
+            </span>
+            <span className="block text-xs font-bold font-serif-brand">
+              99481 44296
+            </span>
+          </div>
+        </a>
+      </aside>
     </div>
   );
 }

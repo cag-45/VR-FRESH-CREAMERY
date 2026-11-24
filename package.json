@@ -1,5 +1,5 @@
 {
-  "name": "temp-app",
+  "name": "vr-fresh-creamery",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,10 +8,18 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "registries": {
+    "@react-bits": "https://reactbits.dev/r/{name}.json"
+  },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^14.14.0",
+    "lucide-react": "^1.79.0",
     "next": "16.4.6",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "tailwind-merge": "^3.7.1"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "4.3.3",
