@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAF8F2;
-  --foreground: #0A3D1C;
+  --background: #FAF6ED;
+  --foreground: #1A1A1A;
   --primary: #0B4822;
   --primary-hover: #083719;
   --leaf-green: #258742;
-  --mint-accent: #34A853;
-  --cream-card: #FFFFFF;
-  --cream-surface: #F5F2E7;
-  --cream-border: #E3E9DD;
+  --leaf-light: #34A853;
+  --cream-warm: #FAF6ED;
+  --cream-off: #F5F0E4;
+  --cream-border: #E8DFC8;
   --mulberry: #6B2D5C;
-  --gold-accent: #D4A359;
+  --text-dark: #1C1C1C;
+  --text-muted: #6B7280;
 }
 
 @theme {
@@ -19,37 +20,87 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-leaf: var(--leaf-green);
-  --color-mint: var(--mint-accent);
-  --color-cream-card: var(--cream-card);
-  --color-cream-surface: var(--cream-surface);
+  --color-leaf-light: var(--leaf-light);
+  --color-cream: var(--cream-warm);
+  --color-cream-off: var(--cream-off);
   --color-cream-border: var(--cream-border);
   --color-mulberry: var(--mulberry);
-  --color-gold: var(--gold-accent);
 
   --font-serif-brand: var(--font-playfair), Georgia, serif;
   --font-script-brand: var(--font-script), cursive;
   --font-sans-brand: var(--font-sans), system-ui, sans-serif;
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans-brand);
-  overflow-x: hidden;
+html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar matching brand */
-::-webkit-scrollbar {
-  width: 8px;
+body {
+  background-color: var(--cream-warm);
+  color: var(--text-dark);
+  font-family: var(--font-sans-brand);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-::-webkit-scrollbar-track {
-  background: #FAF8F2;
+
+/* Brand scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FAF6ED; }
+::-webkit-scrollbar-thumb { background: #0B4822; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #258742; }
+
+/* Smooth image loading */
+img { transition: opacity 0.3s ease; }
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
-::-webkit-scrollbar-thumb {
-  background: #0B4822;
-  border-radius: 4px;
+.animate-marquee {
+  animation: marquee 32s linear infinite;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #258742;
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Float bob animation for hero */
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(-6px) rotate(-0.5deg); }
+}
+.animate-float {
+  animation: floatBob 6s ease-in-out infinite;
+}
+
+/* Slow spin for decorative elements */
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-slow-spin {
+  animation: slowSpin 20s linear infinite;
+}
+
+/* Fade in up for section reveals */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+/* Cream drip animation */
+@keyframes drip {
+  0% { height: 0; opacity: 0; }
+  100% { height: 60px; opacity: 1; }
+}
+
+/* Line draw */
+@keyframes drawLine {
+  from { width: 0; }
+  to { width: 100%; }
 }

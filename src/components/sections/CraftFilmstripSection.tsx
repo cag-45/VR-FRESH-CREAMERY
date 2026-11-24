@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export function CraftFilmstripSection() {
   const visualFrames = [
@@ -33,57 +33,58 @@ export function CraftFilmstripSection() {
       title: "Slow Cold Churning",
       category: "Batch Science",
       image: "/images/craft/churn-macro.jpg",
-      caption: "Extruded at -12°C to eliminate icy crystallization.",
+      caption: "Slow-extruded at low temperature to eliminate icy crystals.",
     },
   ];
 
   return (
-    <section id="craft-filmstrip" className="py-16 sm:py-20 md:py-28 bg-[#FAF6ED] text-[#0A2615] overflow-hidden border-b border-[#E3E9DD]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
+    <section id="craft-filmstrip" className="py-16 sm:py-24 bg-[#FAF6ED] text-[#1C1C1C] overflow-hidden border-b border-[#E8DFC8]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-10">
         
-        {/* Editorial Subheading */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <span className="text-[10px] sm:text-xs uppercase font-bold tracking-[0.25em] text-[#0B4822] block mb-2">
-              Visual Documentation
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-black font-serif-brand tracking-tight text-[#071F11]">
-              The Churn In Motion.
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0B4822] text-xs font-bold uppercase tracking-wider mb-2">
+              <Sparkles className="w-3.5 h-3.5 text-[#258742]" />
+              <span>Real Ingredients</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black font-serif-brand tracking-tight text-[#0B4822]">
+              The Churn In Motion
             </h2>
           </div>
-          <div className="flex items-center justify-between md:justify-end gap-3 text-xs sm:text-sm text-[#385340] max-w-md font-medium">
-            <p>Captured inside our Medipalli creamery workshop. Real ingredients and deliberate slow pacing.</p>
-            <span className="lg:hidden text-[10px] text-emerald-800 font-bold bg-emerald-100 px-2 py-0.5 rounded-full shrink-0">
+          <div className="flex items-center justify-between md:justify-end gap-3 text-xs sm:text-sm text-[#4B5563] max-w-md font-medium">
+            <p>Real photography from our Medipalli workshop. Genuine dairy, real fruit, and deliberate craft.</p>
+            <span className="lg:hidden text-[11px] text-[#0B4822] font-bold bg-emerald-100 px-2.5 py-1 rounded-full shrink-0">
               Swipe →
             </span>
           </div>
         </div>
 
-        {/* Responsive Gallery: Touch Swipe Strip on Mobile & Tablet, 5-Col Grid on Desktop */}
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-5 scrollbar-thin">
+        {/* Horizontal Filmstrip Gallery */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-5 px-5 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-5 scrollbar-thin">
           {visualFrames.map((frame, idx) => (
             <div
               key={idx}
-              className="min-w-[260px] sm:min-w-[280px] lg:min-w-0 snap-center group relative rounded-2xl overflow-hidden border border-[#E3E9DD] bg-white shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between shrink-0 lg:shrink"
+              className="min-w-[260px] sm:min-w-[280px] lg:min-w-0 snap-center group relative rounded-2xl overflow-hidden border border-[#E8DFC8] bg-white shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between shrink-0 lg:shrink"
             >
-              <div className="relative h-60 w-full overflow-hidden bg-emerald-950">
+              <div className="relative h-60 w-full overflow-hidden bg-[#FAF6ED]">
                 <Image
                   src={frame.image}
                   alt={frame.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
-                <span className="absolute top-3 left-3 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-[9px] font-bold uppercase tracking-wider text-emerald-300 border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
+                <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-[9px] font-bold uppercase tracking-wider text-emerald-300 border border-white/10">
                   {frame.category}
                 </span>
               </div>
 
               <div className="p-4 space-y-1 bg-white">
-                <h3 className="font-serif-brand font-bold text-sm text-[#071F11] group-hover:text-[#0B4822] transition-colors">
+                <h3 className="font-serif-brand font-bold text-sm text-[#0B4822]">
                   {frame.title}
                 </h3>
-                <p className="text-[11px] text-[#4F6456] leading-relaxed">
+                <p className="text-xs text-[#6B7280] leading-relaxed">
                   {frame.caption}
                 </p>
               </div>

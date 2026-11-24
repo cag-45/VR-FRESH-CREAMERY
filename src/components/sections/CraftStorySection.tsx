@@ -1,156 +1,160 @@
-"use client";
-
 import Image from "next/image";
-import { CheckCircle2, XCircle, Milk, Leaf, ThermometerSnowflake, Scale, Sparkles } from "lucide-react";
+import { Check, X, Sparkles, ShieldCheck } from "lucide-react";
 
 export function CraftStorySection() {
-  const comparisonItems = [
+  const comparisons = [
     {
-      metric: "Primary Dairy Base",
-      commercial: "Reconstituted skim milk solids blended with hydrogenated palm kernel oil (Vanaspati).",
-      vrCreamery: "100% Pure whole farm buffalo & cow milk. Zero vegetable oils, zero milk substitutes.",
+      feature: "The Dairy Base",
+      gelato: "100% Pure Whole Farm Buffalo & Cow Milk with natural butterfat.",
+      commercial: "Water, reconstituted skim milk powder, and hydrogenated palm oil (Vanaspati).",
     },
     {
-      metric: "Fruit Sourcing",
-      commercial: "Artificial essence chemicals, synthetic coloring (E122/E102), and corn syrup solids.",
-      vrCreamery: "Raw, hand-selected fruit: simmered wild mulberries, hand-deseeded sitaphal, and tender coconut malai.",
+      feature: "Fruit Content",
+      gelato: "Real hand-deseeded custard apple, wild mulberries, and fresh tender coconut malai.",
+      commercial: "Synthetic chemical flavorings, artificial colors (E102, E122), and sugary corn syrups.",
     },
     {
-      metric: "Air & Overrun Ratio",
-      commercial: "Pumped with 50% to 60% pressurized air so a 1-litre tub weighs merely 450 grams.",
-      vrCreamery: "Low-aeration slow batch churn (18% natural overrun). Heavy, spoon-coating density.",
+      feature: "Density & Air Ratio",
+      gelato: "Slow batch-churned with minimal air (low overrun). Dense, spoon-coating, and rich.",
+      commercial: "Pumped with 50% to 60% pressurized air so you are mostly buying cold air.",
     },
     {
-      metric: "Freezer Lifespan",
-      commercial: "Laced with chemical gums (E466/E407) to survive 12 months in distributor warehouses.",
-      vrCreamery: "Freshly churned in Medipalli every morning. Kept pure and served at peak freshness.",
+      feature: "Freshness & Shelf Life",
+      gelato: "Freshly churned in Medipalli every morning. Kept pure and served at peak freshness.",
+      commercial: "Loaded with chemical gums and stabilizers to survive 12 months in distributor freezers.",
     },
   ];
 
   return (
-    <section id="craft-story" className="py-20 md:py-32 bg-[#FAF6ED] text-[#0A2615] border-b border-[#E3E9DD]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="craft" className="py-20 sm:py-28 bg-[#FAF6ED] border-b border-[#E8DFC8]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-16">
         
-        {/* Editorial Section Header */}
+        {/* Header */}
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B4822]/10 border border-[#0B4822]/20 text-xs font-bold uppercase tracking-wider text-[#0B4822]">
-            <Scale className="w-3.5 h-3.5 text-[#258742]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#0B4822] text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-[#258742]" />
             <span>The Honest Standard</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-serif-brand tracking-tight text-[#071F11] leading-[1.08]">
-            Gelato vs. <br />
+          <h2 className="text-3xl sm:text-5xl font-black font-serif-brand text-[#0B4822] tracking-tight leading-[1.1]">
+            Real Gelato vs. <br />
             <span className="font-script-brand text-[#258742] text-4xl sm:text-6xl font-bold">
               Industrial Frozen Desserts.
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-[#2E4A37] font-medium leading-relaxed">
-            Read the fine print on most supermarket cartons. They legally cannot call themselves &ldquo;Ice Cream&rdquo; because they are filled with cheap vegetable fat. At <strong>VR Fresh Creamery</strong>, we churn raw culinary truth.
+          <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed">
+            Most supermarket cartons are legally classified as &ldquo;Frozen Dessert&rdquo; because they are made from cheap vegetable palm oil instead of real dairy cream. At <strong>VR Fresh Creamery</strong>, we churn pure food honesty.
           </p>
         </div>
 
-        {/* Dual High-Res Macro Visual Strip */}
+        {/* Visual Dual Photography Strip */}
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          
-          {/* Card 1: Pure Whole Farm Dairy */}
-          <div className="relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-xl border border-[#E3E9DD] group">
+          {/* Card 1: Farm Milk Pour */}
+          <div className="relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-lg border border-[#E8DFC8] group">
             <Image
               src="/images/craft/milk-pour-macro.jpg"
-              alt="Raw Farm Whole Dairy Pour"
+              alt="Farm Whole Milk Pour"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1.5">
-              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-emerald-300">
-                Dairy Purity
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-300">
+                Purity First
               </span>
-              <h3 className="text-2xl font-bold font-serif-brand">Unadulterated Whole Milk</h3>
-              <p className="text-xs text-emerald-100/80 max-w-md">
-                Rich in natural milk butterfat. Creates a clean, silky melt on the tongue with zero oily coating.
+              <h3 className="text-2xl font-bold font-serif-brand">100% Farm Whole Milk</h3>
+              <p className="text-xs text-white/80 max-w-sm">
+                Rich in wholesome dairy cream that melts cleanly on your tongue with zero oily aftertaste.
               </p>
             </div>
           </div>
 
-          {/* Card 2: Slow-Batch Churn Freezing */}
-          <div className="relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-xl border border-[#E3E9DD] group">
+          {/* Card 2: Fresh Churned Pan */}
+          <div className="relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-lg border border-[#E8DFC8] group">
             <Image
               src="/images/craft/churn-macro.jpg"
-              alt="Slow Churned Gelato Pan"
+              alt="Artisan Gelato Churn"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1.5">
-              <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-emerald-300">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-300">
                 Low Aeration Churn
               </span>
-              <h3 className="text-2xl font-bold font-serif-brand">-12°C Velvet Consistency</h3>
-              <p className="text-xs text-emerald-100/80 max-w-md">
-                Extruded slowly to prevent ice crystallization and give every scoop its signature dense mouthfeel.
+              <h3 className="text-2xl font-bold font-serif-brand">Dense Spoon-Coating Texture</h3>
+              <p className="text-xs text-white/80 max-w-sm">
+                No pumped air. Every scoop is weighty, velvety, and deeply satisfying.
               </p>
             </div>
           </div>
-
         </div>
 
-        {/* The Transparent Comparison Table */}
-        <div className="bg-white rounded-3xl border border-[#E3E9DD] shadow-lg overflow-hidden">
-          <div className="p-6 sm:p-8 bg-[#092B17] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span className="text-xs uppercase font-bold tracking-widest text-emerald-400">
-                Label Transparency
-              </span>
-              <h3 className="text-xl sm:text-2xl font-bold font-serif-brand">
-                What Goes Into Your Scoop
-              </h3>
-            </div>
-            <div className="flex items-center gap-2 text-xs font-bold px-3.5 py-1.5 rounded-full bg-emerald-950 border border-emerald-700 text-emerald-300">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Made Daily in Medipalli, Hyderabad</span>
-            </div>
+        {/* Transparent Comparison Table */}
+        <div className="bg-white rounded-3xl border border-[#E8DFC8] overflow-hidden shadow-md">
+          <div className="p-6 sm:p-8 bg-[#0B4822] text-white">
+            <h3 className="text-xl sm:text-2xl font-bold font-serif-brand">
+              What Goes Into Your Spoon
+            </h3>
+            <p className="text-xs sm:text-sm text-emerald-100/90 mt-1">
+              A transparent look at how VR Fresh Creamery compares to typical mass-produced commercial ice cream.
+            </p>
           </div>
 
-          <div className="divide-y divide-[#E3E9DD]">
-            {comparisonItems.map((item, idx) => (
-              <div
-                key={idx}
-                className="grid md:grid-cols-12 p-6 sm:p-8 gap-6 items-start hover:bg-[#FAF8F2]/60 transition-colors"
-              >
-                {/* Metric Title */}
+          <div className="divide-y divide-[#E8DFC8]">
+            {comparisons.map((item, idx) => (
+              <div key={idx} className="p-5 sm:p-7 grid md:grid-cols-12 gap-4 items-start">
                 <div className="md:col-span-3">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-500 block mb-1">
-                    Parameter 0{idx + 1}
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#6B7280]">
+                    {item.feature}
                   </span>
-                  <h4 className="font-serif-brand font-bold text-base text-[#071F11]">
-                    {item.metric}
-                  </h4>
+                </div>
+                
+                {/* VR Fresh Creamery Column */}
+                <div className="md:col-span-5 bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-100">
+                  <div className="flex items-start gap-2">
+                    <div className="w-5 h-5 rounded-full bg-[#0B4822] text-white flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3" />
+                    </div>
+                    <div>
+                      <span className="block text-[11px] font-bold text-[#0B4822] uppercase tracking-wider mb-0.5">
+                        VR Fresh Creamery
+                      </span>
+                      <p className="text-xs sm:text-sm text-[#1C1C1C] font-medium leading-relaxed">
+                        {item.gelato}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Commercial Ice Cream */}
-                <div className="md:col-span-4 p-4 rounded-2xl bg-rose-50/70 border border-rose-200/80 space-y-1.5">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-rose-800">
-                    <XCircle className="w-4 h-4 text-rose-600 shrink-0" />
-                    <span>Commercial Frozen Dessert</span>
+                {/* Commercial Ice Cream Column */}
+                <div className="md:col-span-4 bg-gray-50 p-3.5 rounded-xl border border-gray-200">
+                  <div className="flex items-start gap-2">
+                    <div className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
+                      <X className="w-3 h-3" />
+                    </div>
+                    <div>
+                      <span className="block text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-0.5">
+                        Commercial Frozen Dessert
+                      </span>
+                      <p className="text-xs text-[#6B7280] leading-relaxed">
+                        {item.commercial}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs text-[#524446] leading-relaxed">
-                    {item.commercial}
-                  </p>
                 </div>
 
-                {/* VR Fresh Creamery */}
-                <div className="md:col-span-5 p-4 rounded-2xl bg-emerald-50/80 border border-emerald-300/80 space-y-1.5">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#0B4822]">
-                    <CheckCircle2 className="w-4 h-4 text-[#258742] shrink-0" />
-                    <span>VR Fresh Creamery Gelato</span>
-                  </div>
-                  <p className="text-xs text-[#2A4734] font-medium leading-relaxed">
-                    {item.vrCreamery}
-                  </p>
-                </div>
               </div>
             ))}
+          </div>
+
+          <div className="p-5 bg-[#FAF6ED] border-t border-[#E8DFC8] flex items-center justify-between text-xs text-[#4B5563]">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-[#258742]" />
+              <span className="font-semibold text-[#0B4822]">100% Pure Vegetarian Quality Guarantee</span>
+            </div>
+            <span className="hidden sm:inline text-[#6B7280]">Medipalli, Medchal-Malkajgiri</span>
           </div>
         </div>
 

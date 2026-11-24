@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     "Mulberry Ice Cream",
     "Tender Coconut Ice Cream",
     "Sitaphal Ice Cream",
+    "Guava Ice Cream",
     "5 Litre Ice Cream Tubs Hyderabad",
   ],
   icons: {
@@ -47,7 +48,7 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${plusJakarta.variable} ${dancingScript.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col bg-[#FAF8F2] text-[#0A3D1C] antialiased selection:bg-[#0B4822] selection:text-white">
+      <body className="min-h-screen flex flex-col bg-[#FAF6ED] text-[#1C1C1C] antialiased selection:bg-[#0B4822] selection:text-white">
         {children}
       </body>
     </html>

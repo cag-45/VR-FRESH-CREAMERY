@@ -14,35 +14,35 @@ import { STORE_INFO } from "@/data/store-info";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#04140B] text-[#FAF6ED] antialiased selection:bg-emerald-500 selection:text-black">
-      {/* Elevated Navigation Header */}
+    <div className="min-h-screen flex flex-col bg-[#FAF6ED] text-[#1C1C1C] antialiased selection:bg-[#0B4822] selection:text-white">
+      {/* Sticky Header with Logo & Navigation */}
       <Header />
 
-      {/* Main Narrative Experience */}
+      {/* Main Experience */}
       <main className="flex-1">
-        {/* 01: Full-Bleed Atmospheric Video & Live Dispatch Hero */}
+        {/* 01: Hero Section with Real HD Scoop Imagery & Direct Pricing */}
         <HeroSection />
 
-        {/* 02: The Curated Four Interactive Sensory Tasting Stage */}
+        {/* 02: The 4 Signature Flavours Interactive Tasting Lounge */}
         <FlavorsSection />
 
-        {/* 03: The Anti-Factory Gelato Standard & Ingredient Matrix */}
+        {/* 03: Gelato vs Commercial Frozen Dessert Standard */}
         <CraftStorySection />
 
-        {/* 04: Interactive 5-Litre Tub & Party Catering Calculator */}
-        <CateringSection />
-
-        {/* 05: The Churn In Motion — Photographic Filmstrip */}
+        {/* 04: Visual Process Filmstrip Gallery */}
         <CraftFilmstripSection />
 
-        {/* 06: Verified Customer Love & Google Reviews */}
+        {/* 05: 5-Litre Bulk Tubs & Party Catering Calculator */}
+        <CateringSection />
+
+        {/* 06: Customer Reviews & Verified Experiences */}
         <TestimonialsSection />
 
-        {/* 07: Medipalli Parlour Workshop & Interactive Navigation */}
+        {/* 07: Medipalli Parlour Location & Embedded Map */}
         <LocationHoursSection />
       </main>
 
-      {/* 08: Bespoke Architectural Typographic Footer */}
+      {/* 08: Botanical Heritage Typographic Footer */}
       <Footer />
 
       {/* Floating Tactical WhatsApp Button for Quick Orders */}
@@ -51,14 +51,14 @@ export default function Home() {
           href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=Hi%20VR%20Fresh%20Creamery,%20I%20would%20like%20to%20order%20ice%20cream.`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 px-4 py-3 rounded-full bg-[#258742] hover:bg-[#1E6F36] text-white shadow-2xl hover:shadow-emerald-500/30 transition-all border border-emerald-400/40 hover:scale-105 group backdrop-blur-md"
+          className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white shadow-xl hover:shadow-2xl transition-all border border-emerald-600/40 hover:scale-105 group backdrop-blur-md"
         >
-          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-            <MessageCircle className="w-5 h-5 text-white" />
+          <div className="w-8 h-8 rounded-full bg-[#258742] flex items-center justify-center shrink-0">
+            <MessageCircle className="w-4 h-4 text-white" />
           </div>
           <div className="text-left hidden sm:block pr-1">
-            <span className="block text-[9px] uppercase tracking-widest text-emerald-200 font-bold">
-              Instant Order
+            <span className="block text-[9px] uppercase tracking-widest text-emerald-200 font-bold leading-tight">
+              Order On WhatsApp
             </span>
             <span className="block text-xs font-bold font-serif-brand">
               99481 44296

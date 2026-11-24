@@ -2,170 +2,164 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Package, Users, Check, MessageCircle, ArrowUpRight, Sparkles, Calculator, Flame } from "lucide-react";
+import { MessageCircle, Check, Users, Sparkles } from "lucide-react";
 import { STORE_INFO } from "@/data/store-info";
 
 export function CateringSection() {
   const [guestCount, setGuestCount] = useState<number>(50);
 
-  // 1 tub serves approx 25-30 hearty scoops
-  const tubsNeeded = Math.max(1, Math.ceil(guestCount / 28));
+  // ~35 scoops per 5L tub, ~1.2 scoops per guest
+  const tubsNeeded = Math.max(1, Math.ceil((guestCount * 1.2) / 35));
 
-  const inquiryMsg = encodeURIComponent(
-    `Hi VR Fresh Creamery, I am planning an event for approximately ${guestCount} guests (estimated ${tubsNeeded} x 5L tubs). Please share the bulk quantity pricing quote.`
-  );
+  const whatsappMessage = `Hi VR Fresh Creamery, I am inquiring about 5-Litre Bulk Tubs for an event of ~${guestCount} guests (${tubsNeeded} tubs estimated). Please provide bulk pricing and flavor availability.`;
+  const whatsappUrl = `https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <section id="catering-calculator" className="py-20 md:py-32 bg-[#04140B] text-white border-b border-emerald-950 relative overflow-hidden">
-      
-      {/* Decorative ambient aura */}
-      <div className="absolute top-1/2 -right-48 w-96 h-96 bg-emerald-700/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+    <section id="catering" className="py-20 sm:py-28 bg-[#FAF6ED] border-b border-[#E8DFC8]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-12">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-700 text-xs font-bold uppercase tracking-wider text-emerald-300">
-            <Package className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Celebrations, Weddings & House Parties</span>
+        <div className="max-w-3xl space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#0B4822] text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-[#258742]" />
+            <span>Celebrations & Bulk Orders</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-serif-brand tracking-tight text-[#FAF6ED] leading-[1.08]">
-            5-Litre Party Tubs & <br />
-            <span className="font-script-brand text-emerald-400 text-4xl sm:text-6xl font-bold">
-              Live Gelato Counters.
-            </span>
+          <h2 className="text-3xl sm:text-5xl font-black font-serif-brand text-[#0B4822] tracking-tight">
+            5-Litre Party Tubs & Event Catering
           </h2>
 
-          <p className="text-base sm:text-lg text-emerald-100/80 font-medium leading-relaxed">
-            From intimate terrace celebrations in Jubilee Hills to grand wedding receptions across Telangana. Our insulated thermal containers preserve churn consistency for 4+ hours with zero melting.
+          <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed">
+            Planning a birthday, anniversary, family get-together, or wedding dessert counter? 
+            We supply fresh insulated 5-Litre gelato tubs churned specifically for your event date.
           </p>
         </div>
 
-        {/* The Interactive Tub & Catering Estimator Tool */}
-        <div className="bg-[#092B17]/90 rounded-3xl border border-emerald-700/60 p-5 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-xl grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        {/* 2-Column Grid: Visual Card & Interactive Guest Calculator */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Interactive Calculator Controls */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-emerald-800/60">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
-                <Calculator className="w-4 h-4 text-emerald-300" />
-                <span>Live Event Quantity Estimator</span>
-              </div>
-              <span className="text-[10px] bg-emerald-950 border border-emerald-700 text-emerald-300 px-2 py-0.5 rounded font-mono font-bold">
-                Medipalli Dispatch
-              </span>
-            </div>
-
-            {/* Guest Slider */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <label htmlFor="guest-slider" className="text-sm font-semibold text-emerald-100">
-                  Estimated Guest Count:
-                </label>
-                <span className="font-serif-brand text-3xl font-black text-[#FAF6ED]">
-                  {guestCount} Guests
-                </span>
-              </div>
-              <input
-                id="guest-slider"
-                type="range"
-                min="15"
-                max="300"
-                step="5"
-                value={guestCount}
-                onChange={(e) => setGuestCount(Number(e.target.value))}
-                className="w-full h-2.5 bg-emerald-950 rounded-lg appearance-none cursor-pointer accent-[#258742]"
-              />
-              <div className="flex justify-between text-[11px] font-mono text-emerald-400/80">
-                <span>15 (Intimate)</span>
-                <span>100 (Party)</span>
-                <span>200 (Grand Event)</span>
-                <span>300+</span>
-              </div>
-            </div>
-
-            {/* Calculated Output Readout */}
-            <div className="grid grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-[#04190D] border border-emerald-800">
-                <span className="text-[10px] uppercase font-bold text-emerald-400 tracking-wider block mb-1">
-                  Recommended 5L Tubs
-                </span>
-                <span className="font-serif-brand text-2xl sm:text-3xl font-black text-white">
-                  {tubsNeeded} Tub{tubsNeeded > 1 ? "s" : ""}
-                </span>
-                <span className="block text-[11px] text-emerald-300/70 mt-1">
-                  ~{tubsNeeded * 28} generous scoops
-                </span>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-[#04190D] border border-emerald-800">
-                <span className="text-[10px] uppercase font-bold text-emerald-400 tracking-wider block mb-1">
-                  Flavour Combinations
-                </span>
-                <span className="font-serif-brand text-base sm:text-lg font-bold text-white block truncate">
-                  {tubsNeeded === 1 ? "1 Signature Pick" : `Mix of ${Math.min(tubsNeeded, 4)} Flavours`}
-                </span>
-                <span className="block text-[11px] text-emerald-300/70 mt-1">
-                  Mulberry, Coconut, Guava, Sitaphal
-                </span>
-              </div>
-            </div>
-
-            {/* Pricing Model Transparency Box */}
-            <div className="p-4 rounded-2xl bg-emerald-950/60 border border-emerald-700/70 text-xs space-y-1.5">
-              <p className="font-bold text-emerald-200">
-                Pricing Structure: 5 Litre ice cream tubs and bulk party order pricing depends upon total quantity.
-              </p>
-              <p className="text-emerald-300/80 leading-relaxed">
-                We calculate special tiered volume discounts for multi-tub orders and live event setups. Tap below to receive an instant transparent quote directly from our founder on WhatsApp.
-              </p>
-            </div>
-
-            {/* Instant WhatsApp Action */}
-            <a
-              href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=${inquiryMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#258742] hover:bg-[#1E6F36] text-white font-bold text-sm shadow-xl hover:shadow-2xl transition-all"
-            >
-              <MessageCircle className="w-5 h-5 text-emerald-100" />
-              <span>Get WhatsApp Bulk Quote for {guestCount} Guests</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-
-          </div>
-
-          {/* Right Column: High-Res Catering Photography */}
-          <div className="lg:col-span-5 relative space-y-4">
-            <div className="relative h-72 sm:h-80 w-full rounded-2xl overflow-hidden shadow-2xl border border-emerald-700/50">
+          {/* Left Column: Visual Party Tub Showcase */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative h-[360px] sm:h-[440px] w-full rounded-3xl overflow-hidden shadow-xl border border-[#E8DFC8] group">
               <Image
-                src="/images/parlour/event-catering-macro.jpg"
-                alt="VR Fresh Creamery Live Event Catering"
+                src="/images/parlour/party-tubs.jpg"
+                alt="5 Litre Ice Cream Tub Catering"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-300">
-                  Full Service Catering
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+              
+              <div className="absolute top-4 left-4 bg-white/95 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0B4822] border border-[#E8DFC8]">
+                5-Litre Bulk Format
+              </div>
+
+              <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
+                <span className="text-xs uppercase font-bold text-emerald-300 tracking-wider">
+                  Price Depends Upon Quantity
                 </span>
-                <h4 className="font-serif-brand font-bold text-lg">Live Scooping Counter</h4>
-                <p className="text-xs text-emerald-100/80">
-                  Uniformed master scooper, waffle cones, and fresh toppings.
+                <h3 className="text-2xl sm:text-3xl font-bold font-serif-brand">
+                  Freshness For All Your Guests
+                </h3>
+                <p className="text-xs sm:text-sm text-white/85 leading-relaxed">
+                  Served in heavy insulated tubs with dry-ice packing options to stay dense and frozen throughout your function.
                 </p>
               </div>
             </div>
+          </div>
 
-            <div className="p-4 rounded-2xl bg-[#04190D] border border-emerald-800 text-xs space-y-2">
-              <div className="flex items-center gap-2 text-emerald-200">
-                <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Insulated thermal cases keep tubs frozen for 4+ hours</span>
+          {/* Right Column: Interactive Tub Estimator & Details */}
+          <div className="lg:col-span-6 space-y-6">
+            
+            <div className="bg-white rounded-3xl border border-[#E8DFC8] p-6 sm:p-8 shadow-md space-y-6">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#258742] block mb-1">
+                  Quick Estimator
+                </span>
+                <h4 className="text-xl sm:text-2xl font-bold font-serif-brand text-[#0B4822]">
+                  How Many 5L Tubs Do You Need?
+                </h4>
               </div>
-              <div className="flex items-center gap-2 text-emerald-200">
-                <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Direct delivery across Medchal-Malkajgiri & Greater Hyderabad</span>
+
+              {/* Slider for Guests */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-sm font-semibold">
+                  <span className="text-[#374151] flex items-center gap-1.5">
+                    <Users className="w-4 h-4 text-[#0B4822]" />
+                    Estimated Guests:
+                  </span>
+                  <span className="text-lg font-black text-[#0B4822] font-serif-brand">
+                    {guestCount} guests
+                  </span>
+                </div>
+
+                <input
+                  type="range"
+                  min="15"
+                  max="300"
+                  step="5"
+                  value={guestCount}
+                  onChange={(e) => setGuestCount(Number(e.target.value))}
+                  className="w-full h-2.5 bg-[#E8DFC8] rounded-lg appearance-none cursor-pointer accent-[#0B4822]"
+                />
+                <div className="flex justify-between text-[11px] text-[#6B7280]">
+                  <span>15 guests</span>
+                  <span>150 guests</span>
+                  <span>300+ guests</span>
+                </div>
               </div>
+
+              {/* Recommendation Box */}
+              <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-100 flex items-center justify-between">
+                <div>
+                  <span className="text-xs text-[#0B4822] font-semibold block">
+                    Recommended Tubs:
+                  </span>
+                  <span className="text-2xl font-black font-serif-brand text-[#0B4822]">
+                    {tubsNeeded} {tubsNeeded === 1 ? "Tub" : "Tubs"} (5L each)
+                  </span>
+                  <span className="block text-[11px] text-[#258742] font-medium mt-0.5">
+                    Yields approx {tubsNeeded * 35} generous scoops
+                  </span>
+                </div>
+                <div className="text-right">
+                  <span className="text-[11px] text-[#6B7280] block">Bulk Pricing</span>
+                  <span className="text-xs font-bold text-[#0B4822] block">Custom Quote</span>
+                </div>
+              </div>
+
+              {/* Quality inclusions */}
+              <div className="space-y-2 pt-1 text-xs text-[#374151]">
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded-full bg-[#0B4822] text-white flex items-center justify-center shrink-0">
+                    <Check className="w-2.5 h-2.5" />
+                  </div>
+                  <span>Choose any combination of our 4 signature flavours</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded-full bg-[#0B4822] text-white flex items-center justify-center shrink-0">
+                    <Check className="w-2.5 h-2.5" />
+                  </div>
+                  <span>Fresh morning batch churned right before dispatch</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 rounded-full bg-[#0B4822] text-white flex items-center justify-center shrink-0">
+                    <Check className="w-2.5 h-2.5" />
+                  </div>
+                  <span>Special discounted pricing based on ordered volume</span>
+                </div>
+              </div>
+
+              {/* WhatsApp Inquiry Button */}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Inquire for {guestCount} Guests via WhatsApp</span>
+              </a>
+
             </div>
 
           </div>
