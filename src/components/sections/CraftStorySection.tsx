@@ -26,8 +26,19 @@ export function CraftStorySection() {
   ];
 
   return (
-    <section id="craft" className="py-20 sm:py-28 bg-[#FAF6ED] border-b border-[#E8DFC8]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-16">
+    <section id="craft" className="py-20 sm:py-28 bg-[#FAF6ED] border-b border-[#E8DFC8] relative overflow-hidden">
+      {/* HD Dairy Farm Atmospheric Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/images/craft/dairy-farm.jpg"
+          alt="Dairy Farm Atmosphere"
+          fill
+          className="object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF6ED] via-[#FAF6ED]/90 to-[#FAF6ED]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-16">
         
         {/* Header */}
         <div className="max-w-3xl space-y-4">
@@ -92,7 +103,7 @@ export function CraftStorySection() {
         </div>
 
         {/* Transparent Comparison Table */}
-        <div className="bg-white rounded-3xl border border-[#E8DFC8] overflow-hidden shadow-md">
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl border border-[#E8DFC8] overflow-hidden shadow-md">
           <div className="p-6 sm:p-8 bg-[#0B4822] text-white">
             <h3 className="text-xl sm:text-2xl font-bold font-serif-brand">
               What Goes Into Your Spoon
@@ -112,7 +123,7 @@ export function CraftStorySection() {
                 </div>
                 
                 {/* VR Fresh Creamery Column */}
-                <div className="md:col-span-5 bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-100">
+                <div className="md:col-span-5 bg-emerald-50/70 p-3.5 rounded-xl border border-emerald-100">
                   <div className="flex items-start gap-2">
                     <div className="w-5 h-5 rounded-full bg-[#0B4822] text-white flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3 h-3" />

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { MessageCircle, CheckCircle2, ArrowRight } from "lucide-react";
+import { MessageCircle, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 import { STORE_INFO } from "@/data/store-info";
 
 interface FlavorData {
@@ -25,7 +25,7 @@ const FLAVORS_DATA: FlavorData[] = [
   {
     id: "mulberry",
     name: "Mulberry Delight",
-    subName: "Wild Forest Berries & Cream",
+    subName: "Wild Forest Berries & Whole Farm Cream",
     price: "₹95",
     isSpecial: true,
     accentColor: "text-purple-700",
@@ -46,7 +46,7 @@ const FLAVORS_DATA: FlavorData[] = [
   {
     id: "tender-coconut",
     name: "Tender Coconut Malai",
-    subName: "Fresh Coconut Water & Soft Pulp",
+    subName: "Fresh Coconut Water & Soft Malai Pulp",
     price: "₹85",
     accentColor: "text-[#0B4822]",
     badgeBg: "bg-emerald-100 text-[#0B4822] border-emerald-200",
@@ -66,7 +66,7 @@ const FLAVORS_DATA: FlavorData[] = [
   {
     id: "guava",
     name: "Ripe Pink Guava",
-    subName: "Ruby Orchard Guava Pulp",
+    subName: "Ruby Orchard Guava Puree",
     price: "₹85",
     accentColor: "text-rose-700",
     badgeBg: "bg-rose-100 text-rose-900 border-rose-200",
@@ -86,7 +86,7 @@ const FLAVORS_DATA: FlavorData[] = [
   {
     id: "sitaphal",
     name: "Fresh Sitaphal",
-    subName: "Hand-Deseeded Custard Apple",
+    subName: "Hand-Deseeded Custard Apple Segments",
     price: "₹85",
     isSpecial: true,
     accentColor: "text-amber-700",
@@ -118,14 +118,26 @@ export function FlavorsSection() {
 
   return (
     <section id="flavours" className="py-20 sm:py-28 bg-[#FAF6ED] border-b border-[#E8DFC8] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-12">
+      {/* HD Cream Swirl Textured Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/images/cream-swirl-bg.jpg"
+          alt="Cream Swirl Texture"
+          fill
+          className="object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF6ED] via-[#FAF6ED]/95 to-[#FAF6ED]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-16">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#E8DFC8]">
           <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#258742] block">
-              Handcrafted Daily
-            </span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0B4822] text-xs font-bold uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5 text-[#258742]" />
+              <span>Handcrafted Daily</span>
+            </div>
             <h2 className="text-3xl sm:text-5xl font-black font-serif-brand text-[#0B4822] tracking-tight">
               Our 4 Signature Flavours
             </h2>
@@ -135,7 +147,7 @@ export function FlavorsSection() {
               We specialize in 4 authentic fruit formulations made without any essences or artificial coloring.
             </p>
             <p className="text-xs font-bold text-[#0B4822] mt-1.5">
-              Mulberry is ₹95/scoop &bull; Tender Coconut, Guava & Sitaphal are ₹85/scoop
+              VR Fresh Creamery &bull; Pure Farm Milk Gelato
             </p>
           </div>
         </div>
@@ -179,7 +191,7 @@ export function FlavorsSection() {
         </div>
 
         {/* Detailed Flavor Spotlight Card */}
-        <div className="bg-white rounded-3xl border border-[#E8DFC8] p-6 sm:p-10 shadow-lg">
+        <div className="bg-white/95 rounded-3xl border border-[#E8DFC8] p-6 sm:p-10 shadow-lg backdrop-blur-sm">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Visual Column: Ice Cream Images */}
@@ -309,6 +321,68 @@ export function FlavorsSection() {
 
             </div>
 
+          </div>
+        </div>
+
+        {/* 4-Card Visual Gallery Grid: Real scoops on display */}
+        <div className="space-y-6 pt-4">
+          <div className="flex items-center justify-between">
+            <h3 className="font-serif-brand font-bold text-xl sm:text-2xl text-[#0B4822]">
+              All 4 Flavours In Pictures
+            </h3>
+            <span className="text-xs text-[#6B7280]">
+              Slow-churned daily in Medipalli
+            </span>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {FLAVORS_DATA.map((flavor) => (
+              <div
+                key={flavor.id}
+                className="bg-white rounded-3xl border border-[#E8DFC8] overflow-hidden shadow-xs hover:shadow-lg transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="relative h-56 w-full overflow-hidden">
+                    <Image
+                      src={flavor.image}
+                      alt={flavor.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-white/95 text-[10px] font-bold text-[#0B4822] shadow-xs">
+                      {flavor.price} / scoop
+                    </span>
+                    <span className="absolute bottom-3 left-3 text-white font-serif-brand font-bold text-base">
+                      {flavor.name}
+                    </span>
+                  </div>
+
+                  <div className="p-5 space-y-3">
+                    <p className="text-xs text-[#4B5563] leading-relaxed line-clamp-3">
+                      {flavor.description}
+                    </p>
+
+                    <div className="text-[11px] text-[#258742] font-semibold flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>{flavor.fruitRatio}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-5 pt-0">
+                  <a
+                    href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=Hi%20VR%20Fresh%20Creamery,%20I%20would%20like%20to%20order%20${encodeURIComponent(flavor.name)}.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-[#FAF6ED] hover:bg-[#0B4822] text-[#0B4822] hover:text-white border border-[#E8DFC8] font-bold text-xs transition-colors flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>Order {flavor.price}</span>
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

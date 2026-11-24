@@ -11,8 +11,19 @@ export function LocationHoursSection() {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
 
   return (
-    <section id="location" className="py-20 sm:py-28 bg-[#FAF6ED] text-[#1C1C1C] border-b border-[#E8DFC8]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-12">
+    <section id="location" className="py-20 sm:py-28 bg-[#FAF6ED] text-[#1C1C1C] border-b border-[#E8DFC8] relative overflow-hidden">
+      {/* HD Gelato Shop Atmospheric Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/images/gelato-shop.jpg"
+          alt="Artisanal Gelato Parlour Interior"
+          fill
+          className="object-cover opacity-12"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF6ED] via-[#FAF6ED]/85 to-[#FAF6ED]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-12">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -26,8 +37,8 @@ export function LocationHoursSection() {
             </h2>
           </div>
           <div>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#E8DFC8] text-xs font-bold text-[#0B4822] shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#258742] animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 border border-[#E8DFC8] text-xs font-bold text-[#0B4822] shadow-xs">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#258742] animate-pulse" />
               <span>Open Daily: 11:00 AM – 11:00 PM</span>
             </span>
           </div>
@@ -37,12 +48,12 @@ export function LocationHoursSection() {
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Left Column: Address, Hours & Direct Contact */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DFC8] shadow-md flex flex-col justify-between space-y-6">
+          <div className="lg:col-span-5 bg-white/95 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-[#E8DFC8] shadow-md flex flex-col justify-between space-y-6">
             
             <div className="space-y-6">
               {/* Parlour Badge */}
               <div className="flex items-center gap-3.5">
-                <div className="relative w-13 h-13 rounded-full overflow-hidden border-2 border-[#0B4822] shrink-0">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#0B4822] shrink-0 shadow-xs">
                   <Image src="/logo.jpg" alt="VR Fresh Creamery" fill className="object-cover" />
                 </div>
                 <div>
@@ -144,19 +155,50 @@ export function LocationHoursSection() {
 
           </div>
 
-          {/* Right Column: Google Maps Embed */}
-          <div className="lg:col-span-7 bg-white rounded-3xl overflow-hidden border border-[#E8DFC8] shadow-md min-h-[340px] sm:min-h-[420px] relative">
-            <iframe
-              title="VR Fresh Creamery Medipalli Location"
-              src="https://maps.google.com/maps?q=Parvathapur,+Medipalli,+Medchal-Malkajgiri,+Telangana+500098&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: "340px" }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-            />
+          {/* Right Column: Google Maps Embed with Overlay Parlour Image */}
+          <div className="lg:col-span-7 flex flex-col gap-4">
+            <div className="bg-white rounded-3xl overflow-hidden border border-[#E8DFC8] shadow-md min-h-[300px] sm:min-h-[340px] flex-1 relative">
+              <iframe
+                title="VR Fresh Creamery Medipalli Location"
+                src="https://maps.google.com/maps?q=Parvathapur,+Medipalli,+Medchal-Malkajgiri,+Telangana+500098&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "300px" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
+            </div>
+
+            {/* Parlour Counter Photo Strip */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative h-36 rounded-2xl overflow-hidden border border-[#E8DFC8] shadow-xs group">
+                <Image
+                  src="/images/gelato-scoops.jpg"
+                  alt="Gelato Display Counter"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute bottom-2.5 left-3 text-white text-xs font-bold font-serif-brand">
+                  Fresh Display Counter
+                </span>
+              </div>
+
+              <div className="relative h-36 rounded-2xl overflow-hidden border border-[#E8DFC8] shadow-xs group">
+                <Image
+                  src="/images/cones-row.jpg"
+                  alt="Fresh Waffle Cones"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <span className="absolute bottom-2.5 left-3 text-white text-xs font-bold font-serif-brand">
+                  Crisp Waffle Cones
+                </span>
+              </div>
+            </div>
           </div>
 
         </div>

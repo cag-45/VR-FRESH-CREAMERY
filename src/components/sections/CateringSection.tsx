@@ -15,8 +15,19 @@ export function CateringSection() {
   const whatsappUrl = `https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <section id="catering" className="py-20 sm:py-28 bg-[#FAF6ED] border-b border-[#E8DFC8]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-12">
+    <section id="catering" className="py-20 sm:py-28 bg-[#FAF6ED] border-b border-[#E8DFC8] relative overflow-hidden">
+      {/* HD Celebration Dessert Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/images/catering-bg.jpg"
+          alt="Celebration Dessert Background"
+          fill
+          className="object-cover opacity-12"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF6ED] via-[#FAF6ED]/85 to-[#FAF6ED]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-14">
         
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
@@ -40,16 +51,16 @@ export function CateringSection() {
           
           {/* Left Column: Visual Party Tub Showcase */}
           <div className="lg:col-span-6 relative">
-            <div className="relative h-[360px] sm:h-[440px] w-full rounded-3xl overflow-hidden shadow-xl border border-[#E8DFC8] group">
+            <div className="relative h-[380px] sm:h-[460px] w-full rounded-3xl overflow-hidden shadow-xl border border-[#E8DFC8] group">
               <Image
                 src="/images/parlour/party-tubs.jpg"
                 alt="5 Litre Ice Cream Tub Catering"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
               
-              <div className="absolute top-4 left-4 bg-white/95 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0B4822] border border-[#E8DFC8]">
+              <div className="absolute top-4 left-4 bg-white/95 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0B4822] border border-[#E8DFC8] shadow-sm">
                 5-Litre Bulk Format
               </div>
 
@@ -65,12 +76,23 @@ export function CateringSection() {
                 </p>
               </div>
             </div>
+
+            {/* Overlapping Floating Banner */}
+            <div className="absolute -bottom-5 right-6 sm:right-10 bg-white px-5 py-3 rounded-2xl shadow-xl border border-[#E8DFC8] flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                <Sparkles className="w-5 h-5 text-[#0B4822]" />
+              </div>
+              <div>
+                <span className="block text-[11px] font-bold text-[#0B4822]">Any of the 4 Flavours</span>
+                <span className="block text-xs text-[#6B7280]">Mulberry, Coconut, Guava, Sitaphal</span>
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Interactive Tub Estimator & Details */}
           <div className="lg:col-span-6 space-y-6">
             
-            <div className="bg-white rounded-3xl border border-[#E8DFC8] p-6 sm:p-8 shadow-md space-y-6">
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl border border-[#E8DFC8] p-6 sm:p-8 shadow-md space-y-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#258742] block mb-1">
                   Quick Estimator

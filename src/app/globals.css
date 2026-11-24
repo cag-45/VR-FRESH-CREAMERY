@@ -104,3 +104,21 @@ img { transition: opacity 0.3s ease; }
   from { width: 0; }
   to { width: 100%; }
 }
+
+/* Motion HD Background Animation (Ken Burns Effect) */
+@keyframes kenBurnsSlow {
+  0% {
+    transform: scale(1) translate(0%, 0%);
+  }
+  50% {
+    transform: scale(1.12) translate(-1.5%, -1%);
+  }
+  100% {
+    transform: scale(1) translate(0%, 0%);
+  }
+}
+.animate-ken-burns {
+  animation: kenBurnsSlow 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+

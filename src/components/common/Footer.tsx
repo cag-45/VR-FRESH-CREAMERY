@@ -1,12 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MapPin, MessageCircle, Clock, Heart } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
 import { STORE_INFO } from "@/data/store-info";
 
 export function Footer() {
   return (
-    <footer className="bg-[#072412] text-[#FAF6ED] pt-16 pb-12 border-t border-[#0B4822]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-12">
+    <footer className="relative bg-[#072412] text-[#FAF6ED] pt-16 pb-12 border-t border-[#0B4822] overflow-hidden">
+      {/* Subtle background ambient glow */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-80 h-80 bg-emerald-800/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-12">
         {/* Top Brand Banner */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-emerald-900/60">
           {/* Brand Info */}

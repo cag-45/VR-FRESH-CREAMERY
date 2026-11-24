@@ -5,47 +5,58 @@ import { ArrowRight, MessageCircle, MapPin, Sparkles, CheckCircle2 } from "lucid
 import { STORE_INFO } from "@/data/store-info";
 
 export function HeroSection() {
+  const showcaseItems = [
+    { src: "/images/flavors/mulberry.jpg", alt: "Mulberry Delight Gelato Scoop", name: "Mulberry Delight", price: "₹95" },
+    { src: "/images/flavors/tender-coconut.jpg", alt: "Tender Coconut Malai Scoop", name: "Tender Coconut", price: "₹85" },
+    { src: "/images/flavors/guava.jpg", alt: "Ripe Pink Guava Scoop", name: "Pink Guava", price: "₹85" },
+    { src: "/images/flavors/sitaphal.jpg", alt: "Fresh Sitaphal Scoop", name: "Fresh Sitaphal", price: "₹85" },
+    { src: "/images/cones-row.jpg", alt: "Fresh Waffle Cones", name: "Waffle Cones", price: "Artisan" },
+    { src: "/images/parlour/party-tubs.jpg", alt: "5L Bulk Gelato Tubs", name: "5L Party Tubs", price: "Bulk Order" },
+  ];
+
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-center pt-24 pb-16 overflow-hidden bg-[#FAF6ED]">
-      {/* Subtle organic background textures */}
-      <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt="Fresh Gelato Churn Background"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF6ED] via-[#FAF6ED]/80 to-[#FAF6ED]" />
+    <section className="relative min-h-[95vh] flex flex-col justify-between pt-24 pb-4 overflow-hidden bg-[#FAF6ED]">
+      {/* Motioned HD Background at the Top (Smooth Ken Burns cinematic movement) */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute -inset-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] animate-ken-burns">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt="VR Fresh Creamery Artisan Gelato Background"
+            fill
+            priority
+            className="object-cover opacity-25"
+          />
+        </div>
+        {/* Soft warm creamy overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF6ED]/85 via-[#FAF6ED]/75 to-[#FAF6ED]" />
+        {/* Dynamic ambient color glows */}
+        <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-emerald-200/40 rounded-full blur-3xl pointer-events-none animate-pulse" />
+        <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-purple-200/35 rounded-full blur-3xl pointer-events-none animate-pulse" />
       </div>
 
-      {/* Decorative ambient color accents */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none -z-0" />
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl pointer-events-none -z-0" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 w-full">
-        {/* Top Fresh Badge */}
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 w-full flex-1 flex flex-col justify-center">
+        {/* Top Badges */}
         <div className="flex flex-wrap items-center gap-2 mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#E8DFC8] shadow-xs text-xs font-semibold text-[#0B4822]">
-            <span className="w-2 h-2 rounded-full bg-[#258742] animate-pulse" />
-            <span>Medipalli, Hyderabad</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 border border-[#E8DFC8] shadow-xs text-xs font-semibold text-[#0B4822]">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#258742] animate-pulse" />
+            <span className="font-bold">VR Fresh Creamery</span>
             <span className="text-[#E8DFC8]">|</span>
-            <span className="text-[#6B7280]">Daily Churn 11:00 AM – 11:00 PM</span>
+            <span className="text-[#6B7280]">Medipalli, Hyderabad</span>
           </div>
-          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-xs font-semibold text-[#0B4822]">
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-100/90 border border-emerald-200 text-xs font-semibold text-[#0B4822]">
             <Sparkles className="w-3.5 h-3.5 text-[#258742]" />
-            <span>100% Farm Whole Milk • Zero Palm Oil</span>
+            <span>100% Farm Whole Milk Gelato</span>
           </div>
         </div>
 
         {/* Main Grid: Headline + Visual Composition */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Narrative */}
           <div className="lg:col-span-7 space-y-6 text-left">
             <div className="space-y-3">
               <span className="text-xs sm:text-sm uppercase tracking-[0.25em] font-bold text-[#258742] block">
-                Fresh Cream Gelato
+                VR Fresh Creamery &bull; Fresh Cream Gelato
               </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black font-serif-brand tracking-tight text-[#0B4822] leading-[1.08]">
                 Real Whole Milk. <br />
@@ -63,36 +74,33 @@ export function HeroSection() {
             </p>
 
             {/* Quick Pricing Highlight Banner */}
-            <div className="p-4 rounded-2xl bg-white/90 border border-[#E8DFC8] shadow-sm max-w-lg space-y-2">
+            <div className="p-4 rounded-2xl bg-white/95 border border-[#E8DFC8] shadow-sm max-w-lg space-y-2">
               <div className="flex items-center justify-between text-xs font-bold text-[#0B4822]">
-                <span className="uppercase tracking-wider">Our Signature Four</span>
+                <span className="uppercase tracking-wider">VR Fresh Creamery Flavours</span>
                 <span className="text-[#258742]">Scoops & 5L Tubs</span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-center">
-                <div className="p-2 rounded-xl bg-purple-50/70 border border-purple-100">
+                <div className="p-2.5 rounded-xl bg-purple-50/80 border border-purple-200/80">
                   <span className="block text-[11px] font-medium text-purple-900">Mulberry</span>
                   <span className="block text-sm font-black text-purple-950 font-serif-brand">₹95</span>
                 </div>
-                <div className="p-2 rounded-xl bg-emerald-50/70 border border-emerald-100">
+                <div className="p-2.5 rounded-xl bg-emerald-50/80 border border-emerald-200/80">
                   <span className="block text-[11px] font-medium text-emerald-900">Coconut</span>
                   <span className="block text-sm font-black text-emerald-950 font-serif-brand">₹85</span>
                 </div>
-                <div className="p-2 rounded-xl bg-rose-50/70 border border-rose-100">
+                <div className="p-2.5 rounded-xl bg-rose-50/80 border border-rose-200/80">
                   <span className="block text-[11px] font-medium text-rose-900">Guava</span>
                   <span className="block text-sm font-black text-rose-950 font-serif-brand">₹85</span>
                 </div>
-                <div className="p-2 rounded-xl bg-amber-50/70 border border-amber-100">
+                <div className="p-2.5 rounded-xl bg-amber-50/80 border border-amber-200/80">
                   <span className="block text-[11px] font-medium text-amber-900">Sitaphal</span>
                   <span className="block text-sm font-black text-amber-950 font-serif-brand">₹85</span>
                 </div>
               </div>
-              <p className="text-[11px] text-[#6B7280] text-center pt-1">
-                Mulberry is ₹95 &bull; All other 3 flavours start from ₹85 &bull; 5L tubs for parties
-              </p>
             </div>
 
             {/* Call to Actions */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
               <a
                 href="#flavours"
                 className="px-8 py-4 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group text-center"
@@ -113,7 +121,7 @@ export function HeroSection() {
             </div>
 
             {/* Real Quality Seals */}
-            <div className="pt-4 flex flex-wrap gap-5 text-xs text-[#4B5563] font-medium">
+            <div className="pt-3 flex flex-wrap gap-5 text-xs text-[#4B5563] font-medium">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#258742]" />
                 <span>100% Pure Vegetarian</span>
@@ -135,7 +143,7 @@ export function HeroSection() {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Primary Ice Cream Hero Card */}
-              <div className="relative h-[420px] sm:h-[480px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+              <div className="relative h-[430px] sm:h-[490px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
                 <Image
                   src="/images/hero-scoop.jpg"
                   alt="VR Fresh Creamery Handcrafted Gelato"
@@ -143,12 +151,12 @@ export function HeroSection() {
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/20" />
 
                 {/* Floating Brand Badge */}
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-[#0B4822] border border-[#E8DFC8] shadow-sm flex items-center gap-2">
+                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-[#0B4822] border border-[#E8DFC8] shadow-sm flex items-center gap-2">
                   <div className="relative w-5 h-5 rounded-full overflow-hidden shrink-0">
-                    <Image src="/logo.jpg" alt="Logo" fill className="object-cover" />
+                    <Image src="/logo.jpg" alt="VR Fresh Creamery Logo" fill className="object-cover" />
                   </div>
                   <span>VR Fresh Creamery</span>
                 </div>
@@ -156,7 +164,7 @@ export function HeroSection() {
                 {/* Bottom Card Caption */}
                 <div className="absolute bottom-5 left-5 right-5 text-white space-y-1">
                   <span className="text-[11px] uppercase tracking-wider text-emerald-300 font-bold block">
-                    Daily Fresh Churn
+                    VR Fresh Creamery
                   </span>
                   <h3 className="font-serif-brand font-bold text-xl sm:text-2xl text-white leading-tight">
                     Pure Cream Gelato
@@ -174,7 +182,7 @@ export function HeroSection() {
                 </div>
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 block">
-                    Customer Favorite
+                    VR Fresh Creamery
                   </span>
                   <span className="font-serif-brand font-bold text-sm text-[#1C1C1C] block leading-tight">
                     Mulberry Delight
@@ -195,6 +203,51 @@ export function HeroSection() {
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* Aligned Handcrafted Gelato Showcase Bar (Redesigned & 100% aligned with container) */}
+      <div className="relative z-10 w-full mt-10 pt-6 border-t border-[#E8DFC8]/70 bg-white/70 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#258742]" />
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0B4822]">
+                VR Fresh Creamery Menu Showcase
+              </span>
+            </div>
+            <span className="text-xs font-semibold text-[#6B7280]">
+              Handcrafted with 100% Whole Farm Milk & Real Fruit
+            </span>
+          </div>
+
+          {/* Symmetrical, perfectly aligned 6-card responsive grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 pb-2">
+            {showcaseItems.map((item, idx) => (
+              <a
+                key={idx}
+                href="#flavours"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-white border border-[#E8DFC8] shadow-xs hover:border-[#0B4822] hover:shadow-md transition-all group cursor-pointer"
+              >
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-[#E8DFC8]">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="min-w-0 pr-1">
+                  <span className="font-serif-brand font-bold text-xs text-[#1C1C1C] block leading-tight truncate group-hover:text-[#0B4822] transition-colors">
+                    {item.name}
+                  </span>
+                  <span className="text-[11px] font-black text-[#0B4822] block mt-0.5">
+                    {item.price}
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
