@@ -20,7 +20,7 @@ export function CraftStorySection() {
     },
     {
       feature: "Freshness & Shelf Life",
-      gelato: "Freshly churned in Medipalli every morning. Kept pure and served at peak freshness.",
+      gelato: "Freshly churned every single morning. Kept pure and served at peak freshness.",
       commercial: "Loaded with chemical gums and stabilizers to survive 12 months in distributor freezers.",
     },
   ];
@@ -165,7 +165,7 @@ export function CraftStorySection() {
               <ShieldCheck className="w-4 h-4 text-[#258742]" />
               <span className="font-semibold text-[#0B4822]">100% Pure Vegetarian Quality Guarantee</span>
             </div>
-            <span className="hidden sm:inline text-[#6B7280]">Medipalli, Medchal-Malkajgiri</span>
+            <span className="hidden sm:inline text-[#6B7280]">VR Fresh Creamery Standards</span>
           </div>
         </div>
 

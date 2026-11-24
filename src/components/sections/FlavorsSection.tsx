@@ -94,7 +94,7 @@ const FLAVORS_DATA: FlavorData[] = [
     image: "/images/flavors/sitaphal.jpg",
     macroImage: "/images/flavors/sitaphal-macro.jpg",
     description:
-      "A labor of genuine passion. Every single custard apple is manually deseeded by hand in our Medipalli kitchen to ensure the succulent fruit segments remain intact. Slow-churned so the deep, aromatic honey notes blend seamlessly with the dense cold dairy cream.",
+      "A labor of genuine passion. Every single custard apple is manually deseeded by hand in our creamery kitchen to ensure the succulent fruit segments remain intact. Slow-churned so the deep, aromatic honey notes blend seamlessly with the dense cold dairy cream.",
     fruitRatio: "Handmade Whole Sitaphal Pulp",
     sweetness: "Rich & Honeyed Fruit Custard",
     ingredients: [
@@ -331,7 +331,7 @@ export function FlavorsSection() {
               All 4 Flavours In Pictures
             </h3>
             <span className="text-xs text-[#6B7280]">
-              Slow-churned daily in Medipalli
+              Slow-churned daily with real seasonal fruit
             </span>
           </div>
 

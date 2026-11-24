@@ -20,13 +20,20 @@ const dancingScript = Dancing_Script({
   display: "swap",
 });
 
+const isGithub = process.env.GITHUB_ACTIONS === "true" || process.env.DEPLOY_TARGET === "gh-pages";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH !== undefined
+  ? process.env.NEXT_PUBLIC_BASE_PATH
+  : isGithub
+  ? "/VR-FRESH-CREAMERY"
+  : "";
+
 export const metadata: Metadata = {
   title: "VR Fresh Creamery | Fresh Cream Gelato — Freshness in Every Scoop",
-  description: "Handcrafted artisan fresh-cream gelato in Medipalli, Medchal-Malkajgiri. Churned daily from 100% whole farm milk and real seasonal fruits: Mulberry, Tender Coconut, Guava, and Sitaphal. 5L party tubs available.",
+  description: "Handcrafted artisan fresh-cream gelato by VR Fresh Creamery. Churned daily from 100% whole farm milk and real seasonal fruits: Mulberry, Tender Coconut, Guava, and Sitaphal. 5L party tubs available.",
   keywords: [
     "VR Fresh Creamery",
     "Fresh Cream Gelato Hyderabad",
-    "Artisan Ice Cream Medipalli",
+    "Artisan Ice Cream Hyderabad",
     "Mulberry Ice Cream",
     "Tender Coconut Ice Cream",
     "Sitaphal Ice Cream",
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
     "5 Litre Ice Cream Tubs Hyderabad",
   ],
   icons: {
-    icon: "/logo.jpg",
+    icon: `${basePath}/logo.jpg`,
   },
 };
 

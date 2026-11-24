@@ -9,8 +9,7 @@ export function HeroSection() {
     { src: "/images/flavors/mulberry.jpg", alt: "Mulberry Delight Gelato Scoop", name: "Mulberry Delight", price: "₹95" },
     { src: "/images/flavors/tender-coconut.jpg", alt: "Tender Coconut Malai Scoop", name: "Tender Coconut", price: "₹85" },
     { src: "/images/flavors/guava.jpg", alt: "Ripe Pink Guava Scoop", name: "Pink Guava", price: "₹85" },
-    { src: "/images/flavors/sitaphal.jpg", alt: "Fresh Sitaphal Scoop", name: "Fresh Sitaphal", price: "₹85" },
-    { src: "/images/cones-row.jpg", alt: "Fresh Waffle Cones", name: "Waffle Cones", price: "Artisan" },
+    { src: "/images/flavors/sitaphal.jpg", alt: "Fresh Sitaphal Custard Apple Scoop", name: "Fresh Sitaphal", price: "₹85" },
     { src: "/images/parlour/party-tubs.jpg", alt: "5L Bulk Gelato Tubs", name: "5L Party Tubs", price: "Bulk Order" },
   ];
 
@@ -41,7 +40,7 @@ export function HeroSection() {
             <span className="w-2.5 h-2.5 rounded-full bg-[#258742] animate-pulse" />
             <span className="font-bold">VR Fresh Creamery</span>
             <span className="text-[#E8DFC8]">|</span>
-            <span className="text-[#6B7280]">Medipalli, Hyderabad</span>
+            <span className="text-[#6B7280]">Fresh Cream Gelato</span>
           </div>
           <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-100/90 border border-emerald-200 text-xs font-semibold text-[#0B4822]">
             <Sparkles className="w-3.5 h-3.5 text-[#258742]" />
@@ -69,7 +68,7 @@ export function HeroSection() {
 
             <p className="text-base sm:text-lg text-[#374151] leading-relaxed max-w-xl font-normal">
               No artificial essences. No pumped air. No vegetable oil. 
-              At <strong className="text-[#0B4822] font-semibold">VR Fresh Creamery</strong> in Medipalli, 
+              At <strong className="text-[#0B4822] font-semibold">VR Fresh Creamery</strong>, 
               we craft pure artisanal gelato slow-churned from 100% farm-fresh milk and fresh, real fruits.
             </p>
 
@@ -105,7 +104,7 @@ export function HeroSection() {
                 href="#flavours"
                 className="px-8 py-4 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group text-center"
               >
-                <span>Explore The 4 Flavours</span>
+                <span>Explore our flavours</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
 
@@ -195,7 +194,7 @@ export function HeroSection() {
               <div className="absolute -top-4 -right-4 bg-[#0B4822] text-white p-3.5 rounded-2xl shadow-xl border border-emerald-700 flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-emerald-300 shrink-0" />
                 <div className="text-left">
-                  <span className="block text-[10px] text-emerald-200 font-medium leading-none">Medipalli Lab</span>
+                  <span className="block text-[10px] text-emerald-200 font-medium leading-none">VR Fresh Creamery</span>
                   <span className="block text-xs font-bold text-white">Daily 11 AM – 11 PM</span>
                 </div>
               </div>
@@ -206,7 +205,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Aligned Handcrafted Gelato Showcase Bar (Redesigned & 100% aligned with container) */}
+      {/* Aligned Handcrafted Gelato Showcase Bar (Redesigned with 5 clean items: 4 flavours + 5L tubs, NO waffle cones) */}
       <div className="relative z-10 w-full mt-10 pt-6 border-t border-[#E8DFC8]/70 bg-white/70 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
@@ -221,8 +220,8 @@ export function HeroSection() {
             </span>
           </div>
 
-          {/* Symmetrical, perfectly aligned 6-card responsive grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 pb-2">
+          {/* Symmetrical, perfectly aligned 5-card responsive grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 pb-2">
             {showcaseItems.map((item, idx) => (
               <a
                 key={idx}

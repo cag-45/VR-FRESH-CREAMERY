@@ -53,7 +53,7 @@ export function CraftFilmstripSection() {
             </h2>
           </div>
           <div className="flex items-center justify-between md:justify-end gap-3 text-xs sm:text-sm text-[#4B5563] max-w-md font-medium">
-            <p>Real photography from our Medipalli workshop. Genuine dairy, real fruit, and deliberate craft.</p>
+            <p>Real photography from our creamery workshop. Genuine dairy, real fruit, and deliberate craft.</p>
             <span className="lg:hidden text-[11px] text-[#0B4822] font-bold bg-emerald-100 px-2.5 py-1 rounded-full shrink-0">
               Swipe →
             </span>

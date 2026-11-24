@@ -33,7 +33,7 @@ export function LocationHoursSection() {
               <span>Visit Us In Person</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black font-serif-brand tracking-tight text-[#0B4822]">
-              The Medipalli Parlour
+              Our Gelato Parlour
             </h2>
           </div>
           <div>
@@ -61,7 +61,7 @@ export function LocationHoursSection() {
                     VR Fresh Creamery
                   </h3>
                   <span className="text-xs text-[#258742] font-semibold">
-                    Medipalli Fresh Gelato Lab
+                    Artisan Fresh Cream Gelato
                   </span>
                 </div>
               </div>
@@ -159,7 +159,7 @@ export function LocationHoursSection() {
           <div className="lg:col-span-7 flex flex-col gap-4">
             <div className="bg-white rounded-3xl overflow-hidden border border-[#E8DFC8] shadow-md min-h-[300px] sm:min-h-[340px] flex-1 relative">
               <iframe
-                title="VR Fresh Creamery Medipalli Location"
+                title="VR Fresh Creamery Parlour Location"
                 src="https://maps.google.com/maps?q=Parvathapur,+Medipalli,+Medchal-Malkajgiri,+Telangana+500098&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
@@ -188,14 +188,14 @@ export function LocationHoursSection() {
 
               <div className="relative h-36 rounded-2xl overflow-hidden border border-[#E8DFC8] shadow-xs group">
                 <Image
-                  src="/images/cones-row.jpg"
-                  alt="Fresh Waffle Cones"
+                  src="/images/flavors/mulberry.jpg"
+                  alt="Fresh Artisan Gelato"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <span className="absolute bottom-2.5 left-3 text-white text-xs font-bold font-serif-brand">
-                  Crisp Waffle Cones
+                  Artisan Berry Gelato
                 </span>
               </div>
             </div>

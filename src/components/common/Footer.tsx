@@ -35,8 +35,7 @@ export function Footer() {
             </div>
 
             <p className="text-sm text-emerald-100/80 leading-relaxed font-normal max-w-sm">
-              Authentic fresh cream gelato handcrafted daily in Medipalli. 
-              We use 100% whole farm milk and real handpicked fruits. 
+              Authentic fresh cream gelato handcrafted daily with 100% whole farm milk and real handpicked fruits. 
               Zero vegetable oils, zero vanaspati, and zero synthetic essence.
             </p>
 
@@ -133,7 +132,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70 pt-2">
           <p>© 2026 VR Fresh Creamery. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
-            <span>Freshly churned in Medipalli with passion</span>
+            <span>Handcrafted with pure passion & natural ingredients</span>
           </p>
         </div>
       </div>

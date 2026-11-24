@@ -126,7 +126,7 @@ export function Header() {
             </div>
 
             <p className="text-xs text-[#6B7280] text-center pt-1">
-              Open Daily 11:00 AM – 11:00 PM &bull; Medipalli, Hyderabad
+              Open Daily 11:00 AM – 11:00 PM &bull; Hyderabad
             </p>
           </div>
         )}

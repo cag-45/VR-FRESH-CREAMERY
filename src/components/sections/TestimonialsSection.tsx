@@ -34,7 +34,7 @@ export function TestimonialsSection() {
             <span>Community Love</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black font-serif-brand text-[#0B4822] tracking-tight">
-            Loved By Medipalli & Hyderabad
+            Loved By Ice Cream Lovers & Families
           </h2>
           <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed">
             Read what ice cream lovers and families say about our pure fresh-milk gelato.

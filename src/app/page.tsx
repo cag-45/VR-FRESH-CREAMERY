@@ -38,7 +38,7 @@ export default function Home() {
         {/* 06: Customer Reviews & Verified Experiences */}
         <TestimonialsSection />
 
-        {/* 07: Medipalli Parlour Location & Embedded Map */}
+        {/* 07: Parlour Location & Embedded Map */}
         <LocationHoursSection />
       </main>
 
