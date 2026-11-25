@@ -1,4 +1,4 @@
-:HL["/VR-FRESH-CREAMERY/_next/static/chunks/3-mmvm574kmbg.css","style"]
+:HL["/VR-FRESH-CREAMERY/_next/static/chunks/1pws_qcnkdx15.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"SYwG5Yi3qfJy_qeZZvOql","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"bo3afeoFgDI8zJQ9Y_mWj","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
