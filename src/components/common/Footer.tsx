@@ -133,12 +133,24 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom copyright line */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70 pt-2">
+        {/* Bottom copyright line & Credits */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70 pt-2 border-t border-emerald-900/50">
           <p>© 2026 VR Fresh Creamery. All rights reserved.</p>
-          <p className="flex items-center gap-1.5">
-            <span>Handcrafted with pure passion & natural ingredients</span>
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-right">
+            <span>Handcrafted with pure passion &amp; natural ingredients</span>
+            <span className="hidden sm:inline text-emerald-800">•</span>
+            <span>
+              Crafted by{" "}
+              <a
+                href="https://www.zeltriodigital.online"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white font-semibold underline decoration-emerald-400 hover:text-emerald-300 transition-colors"
+              >
+                Zeltrio Digital Services
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </footer>

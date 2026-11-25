@@ -39,7 +39,7 @@ export function CraftStorySection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-16">
-        
+
         {/* Header */}
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#0B4822] text-xs font-bold uppercase tracking-wider">
@@ -121,7 +121,7 @@ export function CraftStorySection() {
                     {item.feature}
                   </span>
                 </div>
-                
+
                 {/* VR Fresh Creamery Column */}
                 <div className="md:col-span-5 bg-emerald-50/70 p-3.5 rounded-xl border border-emerald-100">
                   <div className="flex items-start gap-2">

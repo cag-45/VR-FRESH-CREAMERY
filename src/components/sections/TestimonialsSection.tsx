@@ -9,6 +9,7 @@ export function TestimonialsSection() {
     "Mulberry Delight": "/images/flavors/mulberry.jpg",
     "Tender Coconut": "/images/flavors/tender-coconut.jpg",
     "Pink Guava": "/images/flavors/guava.jpg",
+    "Ripe Pink Guava": "/images/flavors/guava.jpg",
     "Fresh Sitaphal": "/images/flavors/sitaphal.jpg",
   };
 
