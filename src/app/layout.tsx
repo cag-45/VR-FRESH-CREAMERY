@@ -41,7 +41,11 @@ export const metadata: Metadata = {
     "5 Litre Ice Cream Tubs Hyderabad",
   ],
   icons: {
-    icon: `${basePath}/logo.jpg`,
+    icon: [
+      { url: `${basePath}/favicon.ico`, sizes: "any" },
+      { url: `${basePath}/logo.jpg`, type: "image/jpeg" },
+    ],
+    apple: `${basePath}/apple-touch-icon.png`,
   },
 };
 
