@@ -41,14 +41,14 @@ export function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-20 flex items-center justify-between">
-          {/* Logo & Brand */}
+          {/* Logo & Brand - Shown on mobile, tablet, and laptop */}
           <a
             href="#"
             onClick={handleLogoClick}
-            className="flex items-center gap-3 group shrink-0 cursor-pointer"
+            className="flex items-center gap-2.5 sm:gap-3 group shrink-0 cursor-pointer min-w-0"
             aria-label="VR Fresh Creamery - Back to top"
           >
-            <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-full overflow-hidden border-2 border-[#0B4822] shadow-sm transition-transform group-hover:scale-105 shrink-0">
+            <div className="relative w-11 h-11 sm:w-13 sm:h-13 rounded-full overflow-hidden border-2 border-[#0B4822] shadow-sm transition-transform group-hover:scale-105 shrink-0">
               <Image
                 src="/logo.jpg"
                 alt="VR Fresh Creamery"
@@ -57,11 +57,11 @@ export function Header() {
                 className="object-cover"
               />
             </div>
-            <div className="hidden sm:block">
-              <span className="font-serif-brand font-black text-[#0B4822] text-xl leading-tight block tracking-tight">
+            <div className="flex flex-col min-w-0">
+              <span className="font-serif-brand font-black text-[#0B4822] text-base sm:text-xl leading-tight block tracking-tight">
                 VR Fresh Creamery
               </span>
-              <span className="font-script-brand text-[#258742] text-sm block leading-none">
+              <span className="font-script-brand text-[#258742] text-xs sm:text-sm block leading-none">
                 Freshness in Every Scoop.
               </span>
             </div>
@@ -81,15 +81,15 @@ export function Header() {
           </nav>
 
           {/* CTA + Mobile toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <a
               href={getWhatsAppUrl("Hi VR Fresh Creamery, I would like to order ice cream.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white text-xs font-bold tracking-wide shadow-md transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-2 sm:px-5 sm:py-2.5 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white text-[11px] sm:text-xs font-bold tracking-wide shadow-md transition-all shrink-0"
             >
               <MessageCircle className="w-3.5 h-3.5" />
-              Order Now
+              <span>Order Now</span>
             </a>
 
             <button

@@ -115,7 +115,7 @@ export function HeroSection() {
             <span className="text-[#E8DFC8]">|</span>
             <span className="text-[#6B7280]">Fresh Cream Gelato</span>
           </div>
-          <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-100/90 border border-emerald-200 text-xs font-semibold text-[#0B4822]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-100/90 border border-emerald-200 text-xs font-semibold text-[#0B4822]">
             <Sparkles className="w-3.5 h-3.5 text-[#258742]" />
             <span>100% Farm Whole Milk Gelato</span>
           </div>

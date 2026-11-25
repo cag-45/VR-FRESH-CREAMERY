@@ -51,16 +51,16 @@ export default function Home() {
           href={getWhatsAppUrl("Hi VR Fresh Creamery, I would like to order ice cream.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white shadow-xl hover:shadow-2xl transition-all border border-emerald-600/40 hover:scale-105 group backdrop-blur-md"
+          className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white shadow-xl hover:shadow-2xl transition-all border border-emerald-600/40 hover:scale-105 group backdrop-blur-md"
         >
-          <div className="w-8 h-8 rounded-full bg-[#258742] flex items-center justify-center shrink-0">
-            <MessageCircle className="w-4 h-4 text-white" />
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#258742] flex items-center justify-center shrink-0">
+            <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
           </div>
-          <div className="text-left hidden sm:block pr-1">
-            <span className="block text-[9px] uppercase tracking-widest text-emerald-200 font-bold leading-tight">
+          <div className="text-left pr-1">
+            <span className="block text-[8px] sm:text-[9px] uppercase tracking-widest text-emerald-200 font-bold leading-tight">
               Order On WhatsApp
             </span>
-            <span className="block text-xs font-bold font-serif-brand">
+            <span className="block text-[11px] sm:text-xs font-bold font-serif-brand">
               85000 86995
             </span>
           </div>

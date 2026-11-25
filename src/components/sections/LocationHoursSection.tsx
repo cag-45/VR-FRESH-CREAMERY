@@ -160,7 +160,7 @@ export function LocationHoursSection() {
           <div className="lg:col-span-7 flex flex-col gap-4">
             <div className="bg-white rounded-3xl overflow-hidden border border-[#E8DFC8] shadow-md min-h-[360px] sm:min-h-[420px] flex-1 relative group">
               {/* Free to Explore Pill */}
-              <div className="absolute top-3.5 right-3.5 z-10 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#E8DFC8] shadow-sm text-[10px] font-semibold text-[#0B4822] hidden sm:flex items-center gap-1.5 pointer-events-none">
+              <div className="absolute top-3.5 right-3.5 z-10 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#E8DFC8] shadow-sm text-[10px] font-semibold text-[#0B4822] flex items-center gap-1.5 pointer-events-none">
                 <Compass className="w-3.5 h-3.5 text-[#258742]" />
                 <span>Free to Drag, Zoom &amp; Explore</span>
               </div>
