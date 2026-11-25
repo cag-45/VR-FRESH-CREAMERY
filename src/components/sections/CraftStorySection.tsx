@@ -84,8 +84,8 @@ export function CraftStorySection() {
           {/* Card 2: Fresh Churned Pan */}
           <div className="relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-lg border border-[#E8DFC8] group">
             <Image
-              src="/images/craft/churn-macro.jpg"
-              alt="Artisan Gelato Churn"
+              src="/images/craft/spoon-texture.jpg"
+              alt="Dense Spoon-Coating Artisan Gelato Texture"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />

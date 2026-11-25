@@ -21,7 +21,7 @@ export const STORE_INFO: StoreInfo = {
   socialLinks: {
     instagram: "https://instagram.com/vrfreshcreamery",
     facebook: "https://facebook.com/vrfreshcreamery",
-    googleMaps: "https://maps.google.com/?q=VR+Fresh+Creamery+Medipalli+Telangana",
+    googleMaps: "https://maps.google.com/?q=17.401626,78.606934+(VR+Fresh+Creamery)",
   },
 };
 

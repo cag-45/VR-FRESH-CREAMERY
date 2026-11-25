@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { MapPin, Clock, Phone, Mail, MessageCircle, Navigation, Sparkles } from "lucide-react";
+import { MapPin, Clock, Phone, Mail, MessageCircle, Navigation, Sparkles, Compass, ExternalLink } from "lucide-react";
 import { STORE_INFO, getWhatsAppUrl } from "@/data/store-info";
 
 export function LocationHoursSection() {
-  const encodedAddress = encodeURIComponent(
-    `${STORE_INFO.address.street}, ${STORE_INFO.address.area}, ${STORE_INFO.address.city} - ${STORE_INFO.address.pincode}`
-  );
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+  const exactCoords = { lat: 17.401626, lng: 78.606934 };
+  const exactAddressLabel = "VR Fresh Creamery - H.No 6-34/7, Sai Aishwarya Colony Road No 9, Parvathapur, Medipalli";
+  const mapsEmbedUrl = `https://maps.google.com/maps?q=${exactCoords.lat},${exactCoords.lng}+(${encodeURIComponent(exactAddressLabel)})&t=&z=17&ie=UTF8&iwloc=B&output=embed`;
+  const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${exactCoords.lat},${exactCoords.lng}&query=${encodeURIComponent("VR Fresh Creamery, Sai Aishwarya Colony, Road No 9, Parvathapur, Medipalli")}`;
+  const mapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${exactCoords.lat},${exactCoords.lng}`;
 
   return (
     <section id="location" className="py-20 sm:py-28 bg-[#FAF6ED] text-[#1C1C1C] border-b border-[#E8DFC8] relative overflow-hidden">
@@ -133,7 +134,7 @@ export function LocationHoursSection() {
             {/* Direct Directions Action */}
             <div className="pt-4 flex flex-col sm:flex-row gap-3">
               <a
-                href={mapsUrl}
+                href={mapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3.5 px-5 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white text-xs font-bold text-center flex items-center justify-center gap-2 shadow-sm transition-all"
@@ -155,19 +156,53 @@ export function LocationHoursSection() {
 
           </div>
 
-          {/* Right Column: Google Maps Embed with Overlay Parlour Image */}
+          {/* Right Column: Google Maps Embed with Exact Red Pin Marker & Interactive Controls */}
           <div className="lg:col-span-7 flex flex-col gap-4">
-            <div className="bg-white rounded-3xl overflow-hidden border border-[#E8DFC8] shadow-md min-h-[300px] sm:min-h-[340px] flex-1 relative">
+            <div className="bg-white rounded-3xl overflow-hidden border border-[#E8DFC8] shadow-md min-h-[360px] sm:min-h-[420px] flex-1 relative group">
+              {/* Floating Exact Location Red Marker Indicator */}
+              <div className="absolute top-3.5 left-3.5 z-10 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-red-200 shadow-md flex items-center gap-2.5 pointer-events-none">
+                <div className="relative flex items-center justify-center shrink-0">
+                  <span className="w-3.5 h-3.5 rounded-full bg-red-500 animate-ping absolute opacity-75" />
+                  <span className="w-3 h-3 rounded-full bg-red-600 relative border-2 border-white shadow-xs" />
+                </div>
+                <div className="text-[11px] leading-tight">
+                  <div className="font-bold text-[#0B4822] flex items-center gap-1.5">
+                    <span className="text-red-600 font-extrabold uppercase text-[10px] tracking-wider">Red Marker Pinned</span>
+                    <span>&bull;</span>
+                    <span>H.No 6-34/7, Road No 9</span>
+                  </div>
+                  <div className="text-[#4B5563] text-[10px] font-medium">Sai Aishwarya Colony, Parvathapur, Medipalli</div>
+                </div>
+              </div>
+
+              {/* Free to Explore Pill */}
+              <div className="absolute top-3.5 right-3.5 z-10 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#E8DFC8] shadow-sm text-[10px] font-semibold text-[#0B4822] hidden sm:flex items-center gap-1.5 pointer-events-none">
+                <Compass className="w-3.5 h-3.5 text-[#258742]" />
+                <span>Free to Drag, Zoom &amp; Explore</span>
+              </div>
+
+              {/* External Full Map Link Button */}
+              <a
+                href={mapsSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-3.5 right-3.5 z-10 bg-white/95 hover:bg-white text-[#0B4822] px-3.5 py-1.5 rounded-full border border-[#E8DFC8] shadow-md text-xs font-bold flex items-center gap-1.5 transition-all hover:scale-105"
+              >
+                <span>View Full Map</span>
+                <ExternalLink className="w-3 h-3 text-[#258742]" />
+              </a>
+
+              {/* Fully Interactive Google Map with Red Drop Pin */}
               <iframe
-                title="VR Fresh Creamery Parlour Location"
-                src="https://maps.google.com/maps?q=Parvathapur,+Medipalli,+Medchal-Malkajgiri,+Telangana+500098&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="VR Fresh Creamery Parlour Exact Location Pin"
+                src={mapsEmbedUrl}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "300px" }}
+                style={{ border: 0, minHeight: "360px" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
+                className="w-full h-full min-h-[360px]"
               />
             </div>
 

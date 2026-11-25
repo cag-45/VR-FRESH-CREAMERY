@@ -89,9 +89,14 @@ export function Footer() {
             <div className="space-y-2.5 text-xs text-emerald-100/85">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=17.401626,78.606934+(VR+Fresh+Creamery)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   H.No 6-34/7, Road No 9, Sai Aishwarya Colony, Parvathapur, Bibi Shaeb Maqta, PO: Medipalli, DIST: Medchal-Malkajgiri, Telangana 500098
-                </span>
+                </a>
               </div>
 
               <div className="flex items-center gap-2.5">
