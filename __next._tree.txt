@@ -3,4 +3,4 @@
 :HL["/VR-FRESH-CREAMERY/_next/static/media/9d036f80216c14ee-s.p.3u4lli0-axodc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/VR-FRESH-CREAMERY/_next/static/media/d8aeca813a9ab546-s.p.18rizl4rsrl42.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 1:[["children",{"s":"__PAGE__","h":160}]]
-0:{"b":"u-gId6uXyBemQZPOxEvo4","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"rz2c_q3H9M4LtA2haT3XB","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

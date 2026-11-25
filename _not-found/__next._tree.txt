@@ -1,4 +1,4 @@
 :HL["/VR-FRESH-CREAMERY/_next/static/chunks/2r-x2tg35xzho.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"u-gId6uXyBemQZPOxEvo4","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"rz2c_q3H9M4LtA2haT3XB","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
