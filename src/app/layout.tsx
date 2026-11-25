@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans, Dancing_Script } from "next/font/google";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -27,7 +28,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH !== undefined
   ? "/VR-FRESH-CREAMERY"
   : "";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vrfreshcreamery.com";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

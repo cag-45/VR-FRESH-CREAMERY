@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { getSiteUrl } from "@/lib/site-url";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vrfreshcreamery.com";
+  const siteUrl = getSiteUrl();
   const lastModified = new Date();
 
   return [
