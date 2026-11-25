@@ -3,8 +3,8 @@ import { StoreInfo } from "@/types";
 export const STORE_INFO: StoreInfo = {
   brandName: "VR FRESH CREAMERY",
   tagline: "FRESH CREAM GELATO — Freshness in Every Scoop.",
-  phone: "+91 99481 44296",
-  whatsapp: "+91 99481 44296",
+  phone: "+91 85000 86995",
+  whatsapp: "+91 85000 86995",
   email: "vrfreshcreamery@gmail.com",
   address: {
     street: "H.No - 6-34/7, Sai Aishwarya Colony Road No - 9",
@@ -28,9 +28,9 @@ export const STORE_INFO: StoreInfo = {
 /**
  * Returns a clean, working WhatsApp URL.
  * International WhatsApp wa.me links must use standard digits without '+' or duplicate country codes.
- * India country code: 91, Mobile: 9948144296 -> 919948144296
+ * India country code: 91, Mobile: 8500086995 -> 918500086995
  */
 export const getWhatsAppUrl = (message?: string): string => {
-  const baseUrl = "https://wa.me/919948144296";
+  const baseUrl = "https://wa.me/918500086995";
   return message ? `${baseUrl}?text=${encodeURIComponent(message)}` : baseUrl;
 };

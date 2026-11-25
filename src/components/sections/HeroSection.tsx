@@ -1,10 +1,83 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowRight, MessageCircle, MapPin, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, MessageCircle, MapPin, Sparkles, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { STORE_INFO, getWhatsAppUrl } from "@/data/store-info";
 
 export function HeroSection() {
+  const floatingFlavors = [
+    {
+      id: "mulberry",
+      category: "Mulberry Scoop",
+      brand: "VR Fresh Creamery",
+      name: "Mulberry Delight",
+      price: "₹95 / scoop",
+      image: "/images/flavors/mulberry.jpg",
+      accent: "text-purple-700",
+      border: "border-purple-200",
+      bgBadge: "bg-purple-50",
+      dotActive: "bg-purple-600",
+    },
+    {
+      id: "tender-coconut",
+      category: "Coconut Scoop",
+      brand: "VR Fresh Creamery",
+      name: "Tender Coconut",
+      price: "₹85 / scoop",
+      image: "/images/flavors/tender-coconut.jpg",
+      accent: "text-emerald-700",
+      border: "border-emerald-200",
+      bgBadge: "bg-emerald-50",
+      dotActive: "bg-emerald-600",
+    },
+    {
+      id: "guava",
+      category: "Pink Guava Scoop",
+      brand: "VR Fresh Creamery",
+      name: "Ripe Pink Guava",
+      price: "₹85 / scoop",
+      image: "/images/flavors/guava.jpg",
+      accent: "text-rose-700",
+      border: "border-rose-200",
+      bgBadge: "bg-rose-50",
+      dotActive: "bg-rose-600",
+    },
+    {
+      id: "sitaphal",
+      category: "Sitaphal Scoop",
+      brand: "VR Fresh Creamery",
+      name: "Fresh Sitaphal",
+      price: "₹85 / scoop",
+      image: "/images/flavors/sitaphal.jpg",
+      accent: "text-amber-800",
+      border: "border-amber-200",
+      bgBadge: "bg-amber-50",
+      dotActive: "bg-amber-600",
+    },
+  ];
+
+  const [activeFlavorIdx, setActiveFlavorIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setActiveFlavorIdx((prev) => (prev + 1) % floatingFlavors.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, [isPaused, floatingFlavors.length]);
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveFlavorIdx((prev) => (prev - 1 + floatingFlavors.length) % floatingFlavors.length);
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveFlavorIdx((prev) => (prev + 1) % floatingFlavors.length);
+  };
+
   const showcaseItems = [
     { src: "/images/flavors/mulberry.jpg", alt: "VR Fresh Creamery Mulberry Gelato Tub", name: "Mulberry Delight", price: "₹95" },
     { src: "/images/flavors/tender-coconut.jpg", alt: "VR Fresh Creamery Tender Coconut Gelato Tub", name: "Tender Coconut", price: "₹85" },
@@ -115,7 +188,7 @@ export function HeroSection() {
                 className="px-6 py-4 rounded-full bg-white hover:bg-emerald-50 text-[#0B4822] border-2 border-[#0B4822] font-bold text-sm shadow-sm transition-all flex items-center justify-center gap-2 text-center"
               >
                 <MessageCircle className="w-4 h-4 text-[#258742]" />
-                <span>WhatsApp: 99481 44296</span>
+                <span>WhatsApp: 85000 86995</span>
               </a>
             </div>
 
@@ -174,19 +247,79 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Overlapping Floating Tasting Pill */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-8 bg-white p-4 rounded-2xl shadow-xl border border-[#E8DFC8] flex items-center gap-3.5 max-w-[260px] animate-float">
-                <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-purple-200">
-                  <Image src="/images/flavors/mulberry.jpg" alt="Mulberry Scoop" fill className="object-cover" />
+              {/* Overlapping Floating Slidable Showcase Pill */}
+              <div
+                className="absolute -bottom-7 -left-4 sm:-left-8 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-xl border border-[#E8DFC8] flex flex-col gap-2.5 w-[270px] sm:w-[290px] animate-float select-none transition-all duration-300 group/pill"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
+                <div className="flex items-center gap-3">
+                  {/* Flavour image with animated transition */}
+                  <div className={`relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border ${floatingFlavors[activeFlavorIdx].border} shadow-xs`}>
+                    <Image
+                      key={floatingFlavors[activeFlavorIdx].id}
+                      src={floatingFlavors[activeFlavorIdx].image}
+                      alt={floatingFlavors[activeFlavorIdx].category}
+                      fill
+                      className="object-cover transition-opacity duration-300"
+                    />
+                  </div>
+
+                  {/* Flavor text details */}
+                  <div className="min-w-0 flex-1">
+                    <span className={`text-[10px] font-bold uppercase tracking-wider block leading-none mb-1 ${floatingFlavors[activeFlavorIdx].accent}`}>
+                      {floatingFlavors[activeFlavorIdx].brand}
+                    </span>
+                    <span className="font-serif-brand font-bold text-sm text-[#1C1C1C] block leading-tight truncate">
+                      {floatingFlavors[activeFlavorIdx].name}
+                    </span>
+                    <span className="text-xs font-black text-[#0B4822]">
+                      {floatingFlavors[activeFlavorIdx].price}
+                    </span>
+                  </div>
+
+                  {/* Left / Right mini slider arrows */}
+                  <div className="flex flex-col gap-1 shrink-0">
+                    <button
+                      type="button"
+                      onClick={handlePrev}
+                      aria-label="Previous Flavor"
+                      className="w-5 h-5 rounded-md bg-[#FAF6ED] hover:bg-[#0B4822] hover:text-white text-[#0B4822] flex items-center justify-center transition-colors cursor-pointer"
+                    >
+                      <ChevronLeft className="w-3.5 h-3.5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      aria-label="Next Flavor"
+                      className="w-5 h-5 rounded-md bg-[#FAF6ED] hover:bg-[#0B4822] hover:text-white text-[#0B4822] flex items-center justify-center transition-colors cursor-pointer"
+                    >
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 block">
-                    VR Fresh Creamery
+
+                {/* Bottom slider indicator bar */}
+                <div className="flex items-center justify-between pt-1.5 border-t border-[#E8DFC8]/70 text-[10px]">
+                  <span className="text-[#6B7280] font-medium flex items-center gap-1">
+                    <Sparkles className="w-2.5 h-2.5 text-[#258742]" />
+                    <span>{floatingFlavors[activeFlavorIdx].category}</span>
                   </span>
-                  <span className="font-serif-brand font-bold text-sm text-[#1C1C1C] block leading-tight">
-                    Mulberry Delight
-                  </span>
-                  <span className="text-xs font-black text-[#0B4822]">₹95 / scoop</span>
+                  <div className="flex items-center gap-1.5">
+                    {floatingFlavors.map((flv, idx) => (
+                      <button
+                        key={flv.id}
+                        type="button"
+                        onClick={() => setActiveFlavorIdx(idx)}
+                        aria-label={`Show ${flv.name}`}
+                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                          idx === activeFlavorIdx
+                            ? `w-4 ${flv.dotActive}`
+                            : "w-1.5 bg-[#D1C7B3] hover:bg-[#9CA3AF]"
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
 

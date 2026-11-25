@@ -107,7 +107,7 @@ export function Footer() {
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a href={`tel:${STORE_INFO.phone.replace(/\s+/g, "")}`} className="hover:text-white underline">
-                  +91 99481 44296
+                  +91 85000 86995
                 </a>
               </div>
 
@@ -126,7 +126,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#258742] hover:bg-[#1E6F36] text-white font-bold text-xs shadow-md transition-all"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
-                  WhatsApp Direct: 99481 44296
+                  WhatsApp Direct: 85000 86995
                 </a>
               </div>
             </div>

@@ -23,6 +23,14 @@ export function Header() {
     { label: "Find Us", href: "#location" },
   ];
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window.location.hash) {
+      window.history.pushState(null, "", window.location.pathname);
+    }
+  };
+
   return (
     <>
       <header
@@ -34,7 +42,12 @@ export function Header() {
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-20 flex items-center justify-between">
           {/* Logo & Brand */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
+          <a
+            href="#"
+            onClick={handleLogoClick}
+            className="flex items-center gap-3 group shrink-0 cursor-pointer"
+            aria-label="VR Fresh Creamery - Back to top"
+          >
             <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-full overflow-hidden border-2 border-[#0B4822] shadow-sm transition-transform group-hover:scale-105 shrink-0">
               <Image
                 src="/logo.jpg"
@@ -52,7 +65,7 @@ export function Header() {
                 Freshness in Every Scoop.
               </span>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
@@ -114,7 +127,7 @@ export function Header() {
                 className="flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#0B4822] text-white font-bold text-sm shadow-md"
               >
                 <MessageCircle className="w-4 h-4" />
-                WhatsApp: 99481 44296
+                WhatsApp: 85000 86995
               </a>
               <a
                 href={`tel:${STORE_INFO.phone.replace(/\s+/g, "")}`}

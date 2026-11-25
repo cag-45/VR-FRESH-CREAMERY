@@ -61,7 +61,7 @@ export default function Home() {
               Order On WhatsApp
             </span>
             <span className="block text-xs font-bold font-serif-brand">
-              99481 44296
+              85000 86995
             </span>
           </div>
         </a>
