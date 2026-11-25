@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { MapPin, Clock, Phone, Mail, MessageCircle, Navigation, Sparkles } from "lucide-react";
-import { STORE_INFO } from "@/data/store-info";
+import { STORE_INFO, getWhatsAppUrl } from "@/data/store-info";
 
 export function LocationHoursSection() {
   const encodedAddress = encodeURIComponent(
@@ -98,7 +98,7 @@ export function LocationHoursSection() {
                 <div className="flex items-center justify-between">
                   <span className="text-[#6B7280]">WhatsApp:</span>
                   <a
-                    href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}`}
+                    href={getWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-bold text-[#0B4822] hover:underline"
@@ -143,7 +143,7 @@ export function LocationHoursSection() {
               </a>
 
               <a
-                href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=Hi%20VR%20Fresh%20Creamery,%20I%20am%20visiting%20the%20parlour%20today.`}
+                href={getWhatsAppUrl("Hi VR Fresh Creamery, I am visiting the parlour today.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-3.5 px-5 rounded-full bg-[#FAF6ED] hover:bg-[#F5F0E4] border border-[#E8DFC8] text-[#0B4822] text-xs font-bold text-center flex items-center justify-center gap-2 transition-all"

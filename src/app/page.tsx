@@ -10,7 +10,7 @@ import {
   LocationHoursSection,
 } from "@/components/sections";
 import { MessageCircle } from "lucide-react";
-import { STORE_INFO } from "@/data/store-info";
+import { STORE_INFO, getWhatsAppUrl } from "@/data/store-info";
 
 export default function Home() {
   return (
@@ -48,7 +48,7 @@ export default function Home() {
       {/* Floating Tactical WhatsApp Button for Quick Orders */}
       <aside aria-label="Direct WhatsApp Order" className="fixed bottom-5 right-5 z-40">
         <a
-          href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=Hi%20VR%20Fresh%20Creamery,%20I%20would%20like%20to%20order%20ice%20cream.`}
+          href={getWhatsAppUrl("Hi VR Fresh Creamery, I would like to order ice cream.")}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white shadow-xl hover:shadow-2xl transition-all border border-emerald-600/40 hover:scale-105 group backdrop-blur-md"

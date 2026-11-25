@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Menu, X, MessageCircle } from "lucide-react";
-import { STORE_INFO } from "@/data/store-info";
+import { STORE_INFO, getWhatsAppUrl } from "@/data/store-info";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,7 +70,7 @@ export function Header() {
           {/* CTA + Mobile toggle */}
           <div className="flex items-center gap-3">
             <a
-              href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=Hi%20VR%20Fresh%20Creamery,%20I%20would%20like%20to%20order%20ice%20cream.`}
+              href={getWhatsAppUrl("Hi VR Fresh Creamery, I would like to order ice cream.")}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0B4822] hover:bg-[#083719] text-white text-xs font-bold tracking-wide shadow-md transition-all"
@@ -108,7 +108,7 @@ export function Header() {
 
             <div className="flex flex-col gap-3 pt-1">
               <a
-                href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=Hi%20VR%20Fresh%20Creamery,%20I%20want%20to%20order%20ice%20cream.`}
+                href={getWhatsAppUrl("Hi VR Fresh Creamery, I want to order ice cream.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#0B4822] text-white font-bold text-sm shadow-md"

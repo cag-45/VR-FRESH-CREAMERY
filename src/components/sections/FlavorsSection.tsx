@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { MessageCircle, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
-import { STORE_INFO } from "@/data/store-info";
+import { STORE_INFO, getWhatsAppUrl } from "@/data/store-info";
 
 interface FlavorData {
   id: string;
@@ -109,12 +109,9 @@ const FLAVORS_DATA: FlavorData[] = [
 export function FlavorsSection() {
   const [selectedFlavor, setSelectedFlavor] = useState<FlavorData>(FLAVORS_DATA[0]);
 
-  const whatsappLink = `https://wa.me/91${STORE_INFO.whatsapp.replace(
-    /\D/g,
-    ""
-  )}?text=Hi%20VR%20Fresh%20Creamery,%20I%20would%20like%20to%20order%20${encodeURIComponent(
-    selectedFlavor.name
-  )}%20(${selectedFlavor.price}/scoop).`;
+  const whatsappLink = getWhatsAppUrl(
+    `Hi VR Fresh Creamery, I would like to order ${selectedFlavor.name} (${selectedFlavor.price}/scoop).`
+  );
 
   return (
     <section id="flavours" className="py-20 sm:py-28 bg-[#FAF6ED] border-b border-[#E8DFC8] relative overflow-hidden">
@@ -372,7 +369,7 @@ export function FlavorsSection() {
 
                 <div className="p-5 pt-0">
                   <a
-                    href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=Hi%20VR%20Fresh%20Creamery,%20I%20would%20like%20to%20order%20${encodeURIComponent(flavor.name)}.`}
+                    href={getWhatsAppUrl(`Hi VR Fresh Creamery, I would like to order ${flavor.name}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-2.5 px-4 rounded-xl bg-[#FAF6ED] hover:bg-[#0B4822] text-[#0B4822] hover:text-white border border-[#E8DFC8] font-bold text-xs transition-colors flex items-center justify-center gap-2"

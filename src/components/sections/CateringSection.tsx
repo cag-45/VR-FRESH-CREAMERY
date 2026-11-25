@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { MessageCircle, Check, Users, Sparkles } from "lucide-react";
-import { STORE_INFO } from "@/data/store-info";
+import { STORE_INFO, getWhatsAppUrl } from "@/data/store-info";
 
 export function CateringSection() {
   const [guestCount, setGuestCount] = useState<number>(50);
@@ -12,7 +12,7 @@ export function CateringSection() {
   const tubsNeeded = Math.max(1, Math.ceil((guestCount * 1.2) / 35));
 
   const whatsappMessage = `Hi VR Fresh Creamery, I am inquiring about 5-Litre Bulk Tubs for an event of ~${guestCount} guests (${tubsNeeded} tubs estimated). Please provide bulk pricing and flavor availability.`;
-  const whatsappUrl = `https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = getWhatsAppUrl(whatsappMessage);
 
   return (
     <section id="catering" className="py-20 sm:py-28 bg-[#FAF6ED] border-b border-[#E8DFC8] relative overflow-hidden">

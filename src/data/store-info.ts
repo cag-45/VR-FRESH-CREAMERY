@@ -24,3 +24,13 @@ export const STORE_INFO: StoreInfo = {
     googleMaps: "https://maps.google.com/?q=VR+Fresh+Creamery+Medipalli+Telangana",
   },
 };
+
+/**
+ * Returns a clean, working WhatsApp URL.
+ * International WhatsApp wa.me links must use standard digits without '+' or duplicate country codes.
+ * India country code: 91, Mobile: 9948144296 -> 919948144296
+ */
+export const getWhatsAppUrl = (message?: string): string => {
+  const baseUrl = "https://wa.me/919948144296";
+  return message ? `${baseUrl}?text=${encodeURIComponent(message)}` : baseUrl;
+};

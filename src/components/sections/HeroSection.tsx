@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import { ArrowRight, MessageCircle, MapPin, Sparkles, CheckCircle2 } from "lucide-react";
-import { STORE_INFO } from "@/data/store-info";
+import { STORE_INFO, getWhatsAppUrl } from "@/data/store-info";
 
 export function HeroSection() {
   const showcaseItems = [
-    { src: "/images/flavors/mulberry.jpg", alt: "Mulberry Delight Gelato Scoop", name: "Mulberry Delight", price: "₹95" },
-    { src: "/images/flavors/tender-coconut.jpg", alt: "Tender Coconut Malai Scoop", name: "Tender Coconut", price: "₹85" },
-    { src: "/images/flavors/guava.jpg", alt: "Ripe Pink Guava Scoop", name: "Pink Guava", price: "₹85" },
-    { src: "/images/flavors/sitaphal.jpg", alt: "Fresh Sitaphal Custard Apple Scoop", name: "Fresh Sitaphal", price: "₹85" },
-    { src: "/images/parlour/party-tubs.jpg", alt: "5L Bulk Gelato Tubs", name: "5L Party Tubs", price: "Bulk Order" },
+    { src: "/images/flavors/mulberry.jpg", alt: "VR Fresh Creamery Mulberry Gelato Tub", name: "Mulberry Delight", price: "₹95" },
+    { src: "/images/flavors/tender-coconut.jpg", alt: "VR Fresh Creamery Tender Coconut Gelato Tub", name: "Tender Coconut", price: "₹85" },
+    { src: "/images/flavors/guava.jpg", alt: "VR Fresh Creamery Guava Gelato Tub", name: "Pink Guava", price: "₹85" },
+    { src: "/images/flavors/sitaphal.jpg", alt: "VR Fresh Creamery Sitaphal Gelato Tub", name: "Fresh Sitaphal", price: "₹85" },
+    { src: "/images/flavors/all-flavors-collection.jpg", alt: "VR Fresh Creamery Premium Gelato Gift Pack", name: "All 4 Flavours Pack", price: "Gift Box" },
   ];
 
   return (
@@ -109,7 +109,7 @@ export function HeroSection() {
               </a>
 
               <a
-                href={`https://wa.me/91${STORE_INFO.whatsapp.replace(/\D/g, "")}?text=Hi%20VR%20Fresh%20Creamery,%20I%20would%20like%20to%20order%20ice%20cream.`}
+                href={getWhatsAppUrl("Hi VR Fresh Creamery, I would like to order ice cream.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-4 rounded-full bg-white hover:bg-emerald-50 text-[#0B4822] border-2 border-[#0B4822] font-bold text-sm shadow-sm transition-all flex items-center justify-center gap-2 text-center"
