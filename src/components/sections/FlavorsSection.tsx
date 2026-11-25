@@ -127,7 +127,7 @@ export function FlavorsSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-16">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#E8DFC8]">
           <div className="space-y-2">
@@ -157,11 +157,10 @@ export function FlavorsSection() {
               <button
                 key={flavor.id}
                 onClick={() => setSelectedFlavor(flavor)}
-                className={`text-left p-4 sm:p-5 rounded-2xl transition-all border cursor-pointer relative ${
-                  isSelected
+                className={`text-left p-4 sm:p-5 rounded-2xl transition-all border cursor-pointer relative ${isSelected
                     ? "bg-white border-[#0B4822] shadow-md ring-2 ring-[#0B4822]/20"
                     : "bg-[#F5F0E4] border-[#E8DFC8] hover:bg-white/80 hover:border-gray-300"
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${flavor.badgeBg}`}>
@@ -190,7 +189,7 @@ export function FlavorsSection() {
         {/* Detailed Flavor Spotlight Card */}
         <div className="bg-white/95 rounded-3xl border border-[#E8DFC8] p-6 sm:p-10 shadow-lg backdrop-blur-sm">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             {/* Visual Column: Ice Cream Images */}
             <div className="lg:col-span-6 space-y-4">
               <div className="relative h-72 sm:h-96 w-full rounded-2xl overflow-hidden shadow-md border border-[#E8DFC8] group">
@@ -201,7 +200,7 @@ export function FlavorsSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                
+
                 <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[#0B4822] border border-[#E8DFC8]">
                   Real Handcrafted Scoop
                 </div>

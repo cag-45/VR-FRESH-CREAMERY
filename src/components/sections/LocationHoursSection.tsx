@@ -24,7 +24,7 @@ export function LocationHoursSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-12">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
@@ -46,10 +46,10 @@ export function LocationHoursSection() {
 
         {/* Location Dispatch Grid */}
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-          
+
           {/* Left Column: Address, Hours & Direct Contact */}
           <div className="lg:col-span-5 bg-white/95 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-[#E8DFC8] shadow-md flex flex-col justify-between space-y-6">
-            
+
             <div className="space-y-6">
               {/* Parlour Badge */}
               <div className="flex items-center gap-3.5">

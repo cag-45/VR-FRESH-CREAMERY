@@ -35,7 +35,7 @@ export function Footer() {
             </div>
 
             <p className="text-sm text-emerald-100/80 leading-relaxed font-normal max-w-sm">
-              Authentic fresh cream gelato handcrafted daily with 100% whole farm milk and real handpicked fruits. 
+              Authentic fresh cream gelato handcrafted daily with 100% whole farm milk and real handpicked fruits.
               Zero vegetable oils, zero vanaspati, and zero synthetic essence.
             </p>
 
@@ -85,7 +85,7 @@ export function Footer() {
             <h4 className="font-serif-brand font-bold text-base text-white tracking-wide">
               Parlour & Orders
             </h4>
-            
+
             <div className="space-y-2.5 text-xs text-emerald-100/85">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
